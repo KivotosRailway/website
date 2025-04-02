@@ -12,13 +12,13 @@ tag:
   - 雅各宾纵深线
 category:
   - 建设规划
-cover: https://image.kivotosrailway.com/file/92c08b31e89d171cd7c9e.png 
+cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
 ---
 注意：以下规划随时都有可能面目全非
 
 为配合AixzusaShirasu1建设新田A线及促进西部地区开发，现公布西部铁路计划：
 计划主体：
-* 新田A线一期：KR总部→浦和花子（里夫）
+* 新田A线一期：KR总部→浦和花子（里夫）（本线已合并至彗星快线A线）
 
 配套线路：
 * 真纪电铁雪菲缓行线西延伸：巴斯托涅→六甲循环/本间向日葵（作为新田A线的缓行线）
