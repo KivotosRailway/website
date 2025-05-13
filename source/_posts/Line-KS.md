@@ -6,7 +6,7 @@ tag:
   - 东南主线
 category:
   - 线路介绍
-cover: https://s21.ax1x.com/2024/09/20/pAMSWxs.png
+cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
 ---
 ## 线路概况
 东南主线（英文：Southeastern Mainline）是科里考斯交通的一条主要铁路线，连接东南的日落高地和市中心，沿途经过滨江社区、星光镇和大小针叶树岛。
