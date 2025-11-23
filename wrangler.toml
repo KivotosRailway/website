@@ -1,0 +1,6 @@
+name = "kivotosrailway-website"
+compatibility_date = "2025-11-23"
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"
