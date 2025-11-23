@@ -1,6 +1,5 @@
 name = "website"
 compatibility_date = "2025-11-23"
-main = "workers-site/index.js"
 
-[site]
-bucket = "./public"
+[assets]
+directory = "./public"
