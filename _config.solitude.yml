@@ -412,8 +412,8 @@ footer:
   # 页脚右侧链接，例如：ICP备案号、公安备案号等
   links: 
     # 底部右侧的按钮
-    - name: 小红书
-      url: https://www.xiaohongshu.com/user/profile/655396cf0000000008003eea
+    - name: KR Wiki
+      url: https://wiki.kivotosrailway.com/
 
 # 404 页面(404 page)
 errorpage:
