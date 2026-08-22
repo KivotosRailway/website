@@ -11,6 +11,20 @@
     "latest": "最新資訊",
     "more": "瀏覽更多"
   },
+  "common": {
+    "siteTitle": "基沃托斯鐵道公團 KivotosRailway",
+    "home": "首頁",
+    "news": "新聞",
+    "share": "分享",
+    "copyLink": "複製連結",
+    "copied": "已複製",
+    "shareX": "分享到 X",
+    "shareQq": "分享到 QQ",
+    "all": "全部",
+    "listView": "列表視圖",
+    "pagePosition": "頁面位置",
+    "backToNews": "返回新聞列表"
+  },
   "footer": {
     "follow": "關注我們",
     "social": ["微博", "微信", "X", "LinkedIn", "影片"],

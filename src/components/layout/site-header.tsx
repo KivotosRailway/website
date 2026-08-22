@@ -10,7 +10,23 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const syncLocale = (nextLocale: Locale) => setLocale(nextLocale);
+    const updateDocumentTitle = (nextLocale: Locale) => {
+      const messages = getLocaleMessages(nextLocale);
+      const pathname = window.location.pathname;
+      const currentTitle = document.title.split(" | ")[0];
+      const pageLabel = pathname === "/"
+        ? ""
+        : pathname === "/news"
+          ? messages.common.news
+          : currentTitle;
+
+      document.title = pageLabel ? `${pageLabel} | ${messages.common.siteTitle}` : messages.common.siteTitle;
+    };
+
+    const syncLocale = (nextLocale: Locale) => {
+      setLocale(nextLocale);
+      updateDocumentTitle(nextLocale);
+    };
 
     const handleLocaleChange = (event: Event) => {
       const nextLocale = (event as CustomEvent<{ locale?: Locale }>).detail?.locale ?? getInitialLocale();

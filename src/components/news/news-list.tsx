@@ -1,11 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
+import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 export function NewsList({ news }: { news: NewsItem[] }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const messages = getLocaleMessages(locale);
+
+  useEffect(() => {
+    const syncLocale = () => setLocale(getInitialLocale());
+    syncLocale();
+    window.addEventListener("kr-locale-change", syncLocale);
+    window.addEventListener("storage", syncLocale);
+    return () => {
+      window.removeEventListener("kr-locale-change", syncLocale);
+      window.removeEventListener("storage", syncLocale);
+    };
+  }, []);
   const categories = Array.from(new Set(news.map((item) => item.category).filter(Boolean)));
   const visibleNews = activeCategory
     ? news.filter((item) => item.category === activeCategory)
@@ -20,7 +34,7 @@ export function NewsList({ news }: { news: NewsItem[] }) {
             className={`news-filter-button${activeCategory === null ? " active" : ""}`}
             onClick={() => setActiveCategory(null)}
           >
-            全部
+            {messages.common.all}
           </button>
           {categories.map((category) => (
             <button
@@ -34,7 +48,7 @@ export function NewsList({ news }: { news: NewsItem[] }) {
           ))}
         </div>
         <div className="news-toolbar-right">
-          <button type="button" className="news-view-toggle" aria-label="列表视图">☰</button>
+          <button type="button" className="news-view-toggle" aria-label={messages.common.listView}>☰</button>
         </div>
       </div>
 

@@ -4,7 +4,10 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata: Metadata = {
-  title: "Kivotos Railway",
+  title: {
+    default: "基沃托斯铁道公团 KivotosRailway",
+    template: "%s | 基沃托斯铁道公团 KivotosRailway",
+  },
   description: "Kivotos Railway website",
   icons: {
     icon: "/icon/icon.svg",

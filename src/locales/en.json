@@ -5,11 +5,25 @@
   },
   "home": {
     "kicker": "KIVOTOS RAILWAY / MINECRAFT SERVER",
-    "title": ["Connecting every journey", "by rail"],
+    "title": ["Railways", "connect us"],
     "subtitle": "A Minecraft railway world built and expanded by players together.",
     "cta": "Explore KivotosRailway",
     "latest": "Latest News",
     "more": "View more"
+  },
+  "common": {
+    "siteTitle": "KivotosRailway",
+    "home": "Home",
+    "news": "News",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "shareX": "Share on X",
+    "shareQq": "Share on QQ",
+    "all": "All",
+    "listView": "List view",
+    "pagePosition": "Page position",
+    "backToNews": "Back to news list"
   },
   "footer": {
     "follow": "Follow us",

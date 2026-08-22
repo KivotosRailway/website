@@ -1,7 +1,11 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import { getNewsList } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsList } from "@/components/news/news-list";
+
+export const metadata: Metadata = {
+  title: "新闻",
+};
 
 export default async function NewsPage() {
   const news = await getNewsList();

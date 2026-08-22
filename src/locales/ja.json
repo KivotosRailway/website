@@ -11,6 +11,20 @@
     "latest": "最新ニュース",
     "more": "もっと見る"
   },
+  "common": {
+    "siteTitle": "KivotosRailway",
+    "home": "ホーム",
+    "news": "ニュース",
+    "share": "共有",
+    "copyLink": "リンクをコピー",
+    "copied": "コピーしました",
+    "shareX": "Xで共有",
+    "shareQq": "QQで共有",
+    "all": "すべて",
+    "listView": "リスト表示",
+    "pagePosition": "ページの位置",
+    "backToNews": "ニュース一覧へ戻る"
+  },
   "footer": {
     "follow": "フォローする",
     "social": ["Weibo", "WeChat", "X", "LinkedIn", "動画"],

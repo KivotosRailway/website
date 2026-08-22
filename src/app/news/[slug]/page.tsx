@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getNewsBySlug, markdownToHtml } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsShare } from "@/components/news/news-share";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = await getNewsBySlug(slug);
+
+  return {
+    title: item?.title ?? "新闻",
+  };
+}
 
 export default async function NewsDetailPage({
   params,
