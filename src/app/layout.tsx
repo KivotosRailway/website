@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Kivotos Railway",
   description: "Kivotos Railway website",
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon/icon.svg",
   },
 };
 
