@@ -1,0 +1,27 @@
+{
+  "header": {
+    "nav": ["Home", "News", "Railway", "About", "Members"],
+    "locale": "EN"
+  },
+  "home": {
+    "kicker": "KIVOTOS RAILWAY / MINECRAFT SERVER",
+    "title": ["Connecting every journey", "by rail"],
+    "subtitle": "A Minecraft railway world built and expanded by players together.",
+    "cta": "Explore KivotosRailway",
+    "latest": "Latest News",
+    "more": "View more"
+  },
+  "footer": {
+    "follow": "Follow us",
+    "social": ["Weibo", "WeChat", "X", "LinkedIn", "Video"],
+    "columns": [
+      { "title": "Legal", "links": ["Terms of service", "Privacy policy", "Disclaimer", "Resource pack terms"] },
+      { "title": "About us", "links": ["Our team", "Join us"] },
+      { "title": "Contact us", "links": ["General: connect@kivotos.cc", "Copyright: infringement@kivotos.cc"] }
+    ],
+    "legal": ["KR Wiki", "Service status", "Links"],
+    "description": "Minecraft is a registered trademark of Mojang Studios. Kivotos Railway Park is not affiliated with, authorized by, or partnered with Mojang Studios, Microsoft Corporation, or NetEase. Unless otherwise stated, all cities, regions, organizations, brands, and related settings mentioned on this website are fictional and do not refer to any real-world institutions or commercial entities.",
+    "copyright": "© 2024 - 2026 KivotosRailway",
+    "icp": "桂ICP备2025054269号-5"
+  }
+}

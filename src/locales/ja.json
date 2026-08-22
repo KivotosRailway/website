@@ -1,0 +1,27 @@
+{
+  "header": {
+    "nav": ["ホーム", "ニュース", "鉄道", "について", "メンバー"],
+    "locale": "JP"
+  },
+  "home": {
+    "kicker": "KIVOTOS RAILWAY / MINECRAFT SERVER",
+    "title": ["鉄道でつなぐ", "すべての旅"],
+    "subtitle": "プレイヤーたちが共同で作り続ける Minecraft の鉄道世界。",
+    "cta": "KivotosRailway を見る",
+    "latest": "最新ニュース",
+    "more": "もっと見る"
+  },
+  "footer": {
+    "follow": "フォローする",
+    "social": ["Weibo", "WeChat", "X", "LinkedIn", "動画"],
+    "columns": [
+      { "title": "法務情報", "links": ["利用規約", "プライバシー", "免責事項", "リソースパック規約"] },
+      { "title": "私たちについて", "links": ["チーム紹介", "参加する"] },
+      { "title": "お問い合わせ", "links": ["総合窓口：connect@kivotos.cc", "権利侵害報告：infringement@kivotos.cc"] }
+    ],
+    "legal": ["KR Wiki", "サービス状況", "リンク集"],
+    "description": "Minecraft は Mojang Studios の登録商標です。KivotosRailway は、Mojang Studios および Microsoft Corporation と提携、公認、または協力関係にあるものではありません。本サイト内に記載されている都市、地域、組織、ブランド、および関連設定は、特に明記のない限りすべて架空のものであり、実在の機構や商業法人を指すものではありません。",
+    "copyright": "© 2024 - 2026 KivotosRailway",
+    "icp": "桂ICP备2025054269号-5"
+  }
+}

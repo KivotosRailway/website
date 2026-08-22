@@ -1,0 +1,27 @@
+{
+  "header": {
+    "nav": ["首頁", "新聞", "鐵路", "關於", "成員"],
+    "locale": "繁"
+  },
+  "home": {
+    "kicker": "KIVOTOS RAILWAY / MINECRAFT SERVER",
+    "title": ["以鐵路連接", "每一段旅程"],
+    "subtitle": "一個由玩家共同建設、不斷延伸的 Minecraft 鐵路世界。",
+    "cta": "探索 KivotosRailway",
+    "latest": "最新資訊",
+    "more": "瀏覽更多"
+  },
+  "footer": {
+    "follow": "關注我們",
+    "social": ["微博", "微信", "X", "LinkedIn", "影片"],
+    "columns": [
+      { "title": "法律資訊", "links": ["服務協議", "隱私政策", "免責聲明", "資源包使用協議"] },
+      { "title": "關於我們", "links": ["團隊簡介", "加入我們"] },
+      { "title": "聯絡我們", "links": ["全域郵箱：connect@kivotos.cc", "素材侵權舉報：infringement@kivotos.cc"] }
+    ],
+    "legal": ["KR Wiki", "狀態監控", "友情鏈接"],
+    "description": "Minecraft 是 Mojang Studios 的註冊商標，基沃托斯鐵道公團與 Mojang Studios、微軟公司及網易公司沒有從屬、授權或合作關係。站內提及的城市、地區、組織、品牌及相關設定，除特別說明外，均為虛構內容，不指向任何現實機構或商業實體。",
+    "copyright": "© 2024 - 2026 基沃托斯鐵道公團 KivotosRailway",
+    "icp": "桂ICP备2025054269号-5"
+  }
+}
