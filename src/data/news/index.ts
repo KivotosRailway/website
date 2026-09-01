@@ -216,7 +216,7 @@ export async function getNewsBySlug(slug: string, locale: Locale = "zh-CN"): Pro
   return items.find((item) => item.slug === slug) ?? null;
 }
 
-export async function getLatestNews() {
-  const items = await getNewsList();
+export async function getLatestNews(locale: Locale = "zh-CN") {
+  const items = await getNewsList(locale);
   return items.slice(0, 3);
 }

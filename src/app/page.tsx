@@ -1,8 +1,8 @@
 import { HomePageContent } from "@/components/home/home-page-content";
-import { getLatestNews } from "@/data/news";
+import { getNewsCatalog } from "@/data/news";
 
 export default async function Home() {
-  const news = await getLatestNews();
+  const newsByLocale = await getNewsCatalog();
 
-  return <HomePageContent news={news} />;
+  return <HomePageContent newsByLocale={newsByLocale} />;
 }

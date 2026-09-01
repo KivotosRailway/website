@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
 import { applyLocale, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
-export function HomePageContent({ news }: { news: NewsItem[] }) {
+export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale, NewsItem[]> }) {
   const [locale, setLocale] = useState<Locale>("zh-CN");
 
   useEffect(() => {
@@ -38,6 +38,7 @@ export function HomePageContent({ news }: { news: NewsItem[] }) {
   }, []);
 
   const t = getLocaleMessages(locale);
+  const visibleNews = newsByLocale[locale] ?? newsByLocale["zh-CN"] ?? [];
 
   return (
     <main className="home-page">
@@ -69,7 +70,7 @@ export function HomePageContent({ news }: { news: NewsItem[] }) {
         </div>
 
         <div className="news-grid" aria-label={t.home.latest}>
-          {news.map((post) => (
+          {visibleNews.slice(0, 3).map((post) => (
             <article key={post.id} className="news-card">
               <Link href={post.href} className="news-card-link" aria-label={post.title}>
                 <div className="news-visual" style={{ backgroundImage: `url(${post.cover})` }} />
