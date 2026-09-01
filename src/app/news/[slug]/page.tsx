@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getNewsBySlug, markdownToHtml } from "@/data/news";
+import { getNewsBySlug, getNewsList, markdownToHtml } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsShare } from "@/components/news/news-share";
+
+export async function generateStaticParams() {
+  const news = await getNewsList();
+
+  return news.map((item) => ({ slug: item.slug }));
+}
 
 export async function generateMetadata({
   params,
