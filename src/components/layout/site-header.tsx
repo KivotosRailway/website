@@ -87,8 +87,9 @@ export function SiteHeader() {
                 applyLocale(item);
               }}
               aria-label={localeLabels[item]}
+              title={localeLabels[item]}
             >
-              {localeShortLabels[item]}
+              <span className="locale-button-label">{localeShortLabels[item]}</span>
             </button>
           ))}
         </div>

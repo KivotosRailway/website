@@ -50,6 +50,12 @@ export function NewsDetailClient({ catalog, slug }: { catalog: Record<Locale, Ne
     };
   }, []);
 
+  const aiNotice = locale === "zh-TW"
+    ? "此文章由 AI 從簡體中文翻譯而成，如有任何歧義，以簡體中文版本為準。"
+    : locale === "en"
+      ? "This text was translated from Simplified Chinese using AI; in the event of any discrepancies, the Simplified Chinese version prevails."
+      : "このテキストは簡体字中国語から AI により翻訳されています。相違がある場合は、簡体字中国語版を優先します。";
+
   if (!item) return <main className="news-detail-page"><div className="news-detail-inner"><p>未找到该文章。</p><Link href="/news">{messages.common.backToNews}</Link></div></main>;
 
   return <main className="news-detail-page">
@@ -59,6 +65,11 @@ export function NewsDetailClient({ catalog, slug }: { catalog: Record<Locale, Ne
         <p className="news-detail-tag">{item.category}</p>
         <h1>{item.title}</h1>
         <time>{item.date}</time>
+        {locale !== "zh-CN" && (
+          <div className="news-detail-ai-banner" aria-label="AI translated content">
+            {aiNotice}
+          </div>
+        )}
         <div className="news-detail-cover" style={{ backgroundImage: `url(${item.cover})` }} />
         <div className="news-detail-body" dangerouslySetInnerHTML={{ __html: renderMarkdown(item.body) }} />
         <NewsShare title={item.title} />
