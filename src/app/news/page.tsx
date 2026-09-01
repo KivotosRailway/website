@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { getNewsList } from "@/data/news";
+import { getNewsCatalog } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsList } from "@/components/news/news-list";
+import { NewsPageHeading } from "@/components/news/news-page-heading";
 
 export const metadata: Metadata = {
   title: "新闻",
 };
 
 export default async function NewsPage() {
-  const news = await getNewsList();
+  const catalog = await getNewsCatalog();
 
   return (
     <main className="news-page">
       <div className="news-page-inner">
         <header className="news-page-header">
-          <h1>新闻</h1>
+          <NewsPageHeading />
         </header>
 
-        <NewsList news={news} />
+        <NewsList catalog={catalog} />
       </div>
       <div className="page-bottom-nav">
         <div className="page-bottom-nav-inner">

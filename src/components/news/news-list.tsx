@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
 import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
-export function NewsList({ news }: { news: NewsItem[] }) {
+export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [locale, setLocale] = useState<Locale>("zh-CN");
   const messages = getLocaleMessages(locale);
+  const news = catalog[locale];
 
   useEffect(() => {
     const syncLocale = () => setLocale(getInitialLocale());

@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import type { Locale } from "@/lib/i18n";
 
 export type NewsItem = {
   id: string;
@@ -164,8 +165,8 @@ export function markdownToHtml(markdown: string): string {
   return html.join("");
 }
 
-export async function getNewsList(): Promise<NewsItem[]> {
-  const directory = path.join(process.cwd(), "src", "data", "news", "posts");
+async function readNewsList(locale: Locale): Promise<NewsItem[]> {
+  const directory = path.join(process.cwd(), "src", "data", "news", "posts", locale);
 
   try {
     const files = (await fs.readdir(directory))
@@ -193,8 +194,25 @@ export async function getNewsList(): Promise<NewsItem[]> {
   }
 }
 
-export async function getNewsBySlug(slug: string): Promise<NewsItem | null> {
-  const items = await getNewsList();
+export async function getNewsList(locale: Locale = "zh-CN"): Promise<NewsItem[]> {
+  const items = await readNewsList(locale);
+  return locale === "zh-CN" || items.length > 0 ? items : readNewsList("zh-CN");
+}
+
+export async function getNewsCatalog(): Promise<Record<Locale, NewsItem[]>> {
+  const source = await readNewsList("zh-CN");
+  const entries = await Promise.all((["zh-CN", "zh-TW", "en", "ja"] as Locale[]).map(async (locale) => {
+    if (locale === "zh-CN") return [locale, source] as const;
+
+    const translated = await readNewsList(locale);
+    const bySlug = new Map(translated.map((item) => [item.slug, item]));
+    return [locale, source.map((item) => bySlug.get(item.slug) ?? item)] as const;
+  }));
+  return Object.fromEntries(entries) as Record<Locale, NewsItem[]>;
+}
+
+export async function getNewsBySlug(slug: string, locale: Locale = "zh-CN"): Promise<NewsItem | null> {
+  const items = await getNewsList(locale);
   return items.find((item) => item.slug === slug) ?? null;
 }
 
