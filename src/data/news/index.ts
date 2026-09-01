@@ -62,12 +62,14 @@ function stripFrontmatter(markdown: string): string {
   return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").trim();
 }
 
+const DEFAULT_NEWS_COVER = "https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png";
+
 function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string): NewsItem | null {
   const title = raw.title?.trim();
   const date = raw.date?.trim() || "未注明日期";
   const category = (Array.isArray(raw.category) ? raw.category[0] : raw.category)?.trim() || "未分类";
   const tags = raw.tags ?? [];
-  const cover = raw.cover?.trim() || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80";
+  const cover = raw.cover?.trim() || DEFAULT_NEWS_COVER;
   const slug = raw.slug?.trim() || fileName.replace(/\.md$/i, "");
 
   if (!title) {
