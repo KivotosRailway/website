@@ -43,15 +43,7 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
   return (
     <main className="home-page">
       <section className="home-hero" aria-labelledby="hero-title">
-        <div className="hero-scene" aria-hidden="true">
-          <div className="hero-sky" />
-          <div className="hero-city hero-city-left" />
-          <div className="hero-city hero-city-right" />
-          <div className="hero-overpass" />
-          <div className="hero-track hero-track-one" />
-          <div className="hero-track hero-track-two" />
-          <div className="hero-train"><span /><span /><span /><span /></div>
-        </div>
+        <div className="hero-scene" aria-hidden="true" />
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="hero-kicker">{t.home.kicker}</p>
@@ -80,6 +72,14 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="home-collage" aria-hidden="true">
+        <div className="home-collage-tile home-collage-wide" />
+        <div className="home-collage-tile home-collage-medium" />
+        <div className="home-collage-tile home-collage-small" />
+        <div className="home-collage-tile home-collage-bottom" />
+        <div className="home-collage-tile home-collage-tall" />
       </section>
     </main>
   );
