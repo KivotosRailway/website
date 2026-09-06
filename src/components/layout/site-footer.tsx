@@ -104,7 +104,16 @@ export function SiteFooter() {
           <p className="site-footer-description">{messages.footer.description}</p>
           <div className="site-footer-copyright-row">
             <span>{messages.footer.copyright}</span>
-            {showIcp && <span className="site-footer-icp">{messages.footer.icp}</span>}
+            {showIcp && (
+              <a
+                className="site-footer-icp"
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {messages.footer.icp}
+              </a>
+            )}
           </div>
         </div>
       </div>
