@@ -78,6 +78,7 @@ a { color: inherit; text-decoration: none; }
 .news-detail-ai-banner { display: flex; align-items: center; width: 100%; margin: 0 0 20px; padding: 12px 18px; border-radius: 999px; background: rgba(255, 179, 15, 0.08); color: #ff8f0f; font-size: 15px; line-height: 1.5; }
 .news-detail-cover { aspect-ratio: 29 / 13; border-radius: 18px; background-size: cover; background-position: center; margin-bottom: 24px; }
 .news-detail-body { color: #1d2732; line-height: 1.9; font-size: 17px; }
+.news-detail-body strong, .policy-body strong { font-weight: 700; }
 .news-detail-body h2, .news-detail-body h3 { margin-top: 28px; }
 .news-detail-body p { margin: 0 0 18px; }
 .news-detail-body img { display: block; width: auto; max-width: 100%; height: auto; margin: 18px 0; }
