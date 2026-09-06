@@ -6,16 +6,16 @@
 html, body { min-height: 100%; margin: 0; }
 body { color: var(--ink); background: var(--paper); font-family: "Noto Sans SC", "Noto Sans", Arial, "Microsoft YaHei", sans-serif; }
 a { color: inherit; text-decoration: none; }
-.site-header { display: flex; align-items: center; height: 128px; gap: 32px; padding: 0 clamp(24px, 4vw, 76px); background: #fff; }
+.site-header { display: flex; align-items: center; height: 128px; gap: 32px; padding: 0 clamp(24px, 10.94vw, 168px); background: #fff; }
 .site-logo { display: inline-flex; align-items: center; min-width: 248px; }
-.site-logo-image { display: block; width: min(240px, 18vw); height: auto; }
-.site-navigation { display: flex; align-items: center; justify-content: flex-end; flex: 1; gap: clamp(28px, 3vw, 64px); }
+.site-logo-image { display: block; width: 240px; height: auto; }
+.site-navigation { display: flex; align-items: center; justify-content: flex-end; flex: 1; gap: clamp(28px, 3vw, 46.08px); }
 .site-navigation a { position: relative; padding: 8px 0; font-size: 15px; font-weight: 700; white-space: nowrap; }
 .site-navigation a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; content: ""; background: var(--blue); transform: scaleX(0); transition: transform .2s ease; }
 .site-navigation a:hover { color: var(--blue); }.site-navigation a:hover::after { transform: scaleX(1); }
 .site-header-actions { display: flex; align-items: center; gap: 24px; min-width: 180px; justify-content: flex-end; }
 .site-locale { display: inline-flex; align-items: center; gap: 0; padding: 3px 4px; border-radius: 16px; background: #f1f3f5; border: 1px solid rgba(17, 24, 39, 0.06); box-shadow: inset 0 1px 0 rgba(255,255,255,0.8); }
-.site-locale button { appearance: none; border: 0; background: transparent; border-radius: 12px; padding: 8px 10px; min-width: 52px; color: #5d6773; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.site-locale button { appearance: none; border: 0; background: transparent; border-radius: 12px; padding: 10px 14px; min-width: 48px; color: #5d6773; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
 .site-locale button:hover { color: var(--ink); }
 .site-locale button.active { background: #fff; color: var(--ink); box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08); }
 .locale-button-label { display: inline-flex; align-items: center; justify-content: center; }
@@ -81,8 +81,30 @@ a { color: inherit; text-decoration: none; }
 .news-detail-body h2, .news-detail-body h3 { margin-top: 28px; }
 .news-detail-body p { margin: 0 0 18px; }
 .news-detail-body img { display: block; width: auto; max-width: 100%; height: auto; margin: 18px 0; }
-.news-detail-body ul { padding-left: 22px; }
+.news-detail-body ul, .policy-body ul { padding-left: 28px; }
+.news-detail-body ul ul, .policy-body ul ul { list-style-type: circle; margin-top: 8px; }
+.news-detail-body ul ul ul, .policy-body ul ul ul { list-style-type: square; }
 .news-detail-body li { margin: 8px 0; }
+.news-detail-body a, .policy-body a { color: #1267d8; text-decoration: underline; text-underline-offset: 3px; }
+.news-detail-body a:hover, .policy-body a:hover { color: #8f56a2; }
+.policy-page { padding: 0 0 48px; background: #fff; }
+.policy-page-inner { display: flex; flex-direction: column; gap: 50px; align-items: center; padding: 0 40px 48px; }
+.policy-hero { width: min(1200px, 100%); min-height: 322px; display: flex; align-items: flex-start; padding: 156px 48px 0; border-radius: 10px; background: linear-gradient(110deg, rgba(143, 86, 162, 0.82), rgba(143, 86, 162, 0.18)), url("/policy-hero.png") center / cover; overflow: hidden; }
+.policy-hero-inner { margin-left: -48px; padding: 10px 46px; background: #8f56a2; }
+.policy-hero h1 { margin: 0; color: #fff; font-size: clamp(38px, 4vw, 62px); line-height: 1.3; letter-spacing: 0.25px; }
+.policy-card { width: min(1200px, 100%); padding: 28px; border-radius: 26px; background: #fefdfa; box-shadow: 0 10px 15px rgba(15, 23, 42, 0.04); }
+.policy-ai-notice { display: inline-flex; margin: 0 0 26px; padding: 6px 12px; border-radius: 999px; background: rgba(255, 179, 15, 0.1); color: #ff8f0f; font-size: 13px; line-height: 1.5; }
+.policy-body { color: #1d2732; font-size: 17px; line-height: 1.9; }
+.policy-body h1, .policy-body h2, .policy-body h3 { color: #8f56a2; font-weight: 400; }
+.policy-body h1 { margin: 0 0 28px; font-size: 52px; line-height: 1.3; }
+.policy-body h2 { margin: 42px 0 24px; font-size: 52px; line-height: 1.3; }
+.policy-body h3 { margin: 32px 0 20px; font-size: 40px; line-height: 1.3; }
+.policy-body h1:first-child, .policy-body h2:first-child, .policy-body h3:first-child { margin-top: 0; }
+.policy-body p { margin: 0 0 18px; }
+.policy-body ul, .policy-body ol { margin: 0 0 18px; padding-left: 28px; }
+.policy-body li { margin: 0 0 8px; }
+.policy-body code { padding: 2px 5px; border-radius: 4px; background: rgba(143, 86, 162, 0.08); color: #6d3f7d; }
+.policy-body a { color: #8f56a2; text-decoration: underline; }
 .page-bottom-nav { width: min(1200px, calc(100% - 40px)); margin: 48px auto 0; padding: 32px 0; border-top: 0.8px solid #d9d9d9; border-bottom: 0.8px solid #d9d9d9; }
 .page-bottom-nav-inner { width: 100%; margin: 0 auto; }
 .page-breadcrumb { display: flex; align-items: center; gap: 16px; margin: 0; color: #3a3a3a; font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.0625px; }
@@ -146,6 +168,14 @@ a { color: inherit; text-decoration: none; }
   .news-grid { grid-template-columns: 1fr; gap: 24px; }
   .news-visual { height: 260px; }
   .news-page-inner { padding: 0 16px; }
+  .policy-page-inner { gap: 28px; padding: 0 16px 32px; }
+  .policy-hero { min-height: 220px; padding: 90px 28px 0; }
+  .policy-hero-inner { margin-left: -28px; padding: 8px 28px; }
+  .policy-card { padding: 20px; border-radius: 20px; }
+  .policy-body { font-size: 16px; }
+  .policy-body h1 { font-size: 38px; }
+  .policy-body h2 { margin-top: 32px; font-size: 36px; }
+  .policy-body h3 { margin-top: 26px; font-size: 30px; }
   .news-toolbar { padding-top: 12px; }
   .news-list-grid { grid-template-columns: 1fr; gap: 22px; padding-bottom: 32px; }
   .news-detail-card { padding: 20px; }

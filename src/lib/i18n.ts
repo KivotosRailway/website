@@ -54,3 +54,15 @@ export function getInitialLocale(): Locale {
 export function getLocaleMessages(locale: Locale) {
   return translations[locale];
 }
+
+export function getAiTranslationNotice(locale: Locale) {
+  if (locale === "zh-TW") {
+    return "此文章由 AI 從簡體中文翻譯而成，如有任何歧義，以簡體中文版本為準。";
+  }
+
+  if (locale === "en") {
+    return "This text was translated from Simplified Chinese using AI; in the event of any discrepancies, the Simplified Chinese version prevails.";
+  }
+
+  return "このテキストは簡体字中国語から AI により翻訳されています。相違がある場合は、簡体字中国語版を優先します。";
+}

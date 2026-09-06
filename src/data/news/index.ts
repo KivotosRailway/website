@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import type { Locale } from "@/lib/i18n";
+import { markdownToHtml } from "@/lib/markdown";
 
 export type NewsItem = {
   id: string;
@@ -17,6 +18,7 @@ export type NewsItem = {
 
 type NewsFrontmatter = {
   title?: string;
+  translationLabel?: string;
   date?: string;
   cover?: string;
   category?: string | string[];
@@ -24,7 +26,7 @@ type NewsFrontmatter = {
   slug?: string;
 };
 
-function parseFrontmatter(markdown: string): NewsFrontmatter {
+export function parseFrontmatter(markdown: string): NewsFrontmatter {
   const frontmatterMatch = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!frontmatterMatch) {
     return {};
@@ -88,83 +90,6 @@ function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string)
     markdownFile: `src/data/news/posts/${fileName}`,
     body,
   };
-}
-
-export function markdownToHtml(markdown: string): string {
-  const lines = markdown.replace(/\r\n?/g, "\n").trim().split("\n");
-  const escapeHtml = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const renderInline = (text: string) =>
-    escapeHtml(text)
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt: string, source: string) =>
-        `<img src="${source.replace(/"/g, "&quot;")}" alt="${alt.replace(/"/g, "&quot;")}" />`,
-      )
-      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*(.+?)\*/g, "<em>$1</em>")
-      .replace(/`(.+?)`/g, "<code>$1</code>");
-
-  const html: string[] = [];
-  let paragraph: string[] = [];
-  let listType: "ol" | "ul" | null = null;
-  let listItems: string[] = [];
-
-  const flushParagraph = () => {
-    if (paragraph.length > 0) {
-      html.push(`<p>${renderInline(paragraph.join(" ").trim())}</p>`);
-      paragraph = [];
-    }
-  };
-
-  const flushList = () => {
-    if (listType && listItems.length > 0) {
-      html.push(`<${listType}>${listItems.map((item) => `<li>${renderInline(item)}</li>`).join("")}</${listType}>`);
-    }
-    listType = null;
-    listItems = [];
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) {
-      flushParagraph();
-      flushList();
-      continue;
-    }
-
-    const headingMatch = trimmed.match(/^(#{1,3})\s+(.+)$/);
-    if (headingMatch) {
-      flushParagraph();
-      flushList();
-      const level = headingMatch[1].length;
-      html.push(`<h${level}>${renderInline(headingMatch[2])}</h${level}>`);
-      continue;
-    }
-
-    const imageMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-    if (imageMatch) {
-      flushParagraph();
-      flushList();
-      html.push(`<p><img src="${imageMatch[2].replace(/"/g, "&quot;")}" alt="${imageMatch[1].replace(/"/g, "&quot;")}" /></p>`);
-      continue;
-    }
-
-    const unorderedMatch = trimmed.match(/^[-*]\s+(.+)$/);
-    const orderedMatch = trimmed.match(/^\d+[.)]\s+(.+)$/);
-    if (unorderedMatch || orderedMatch) {
-      flushParagraph();
-      const nextListType = unorderedMatch ? "ul" : "ol";
-      if (listType && listType !== nextListType) flushList();
-      listType = nextListType;
-      listItems.push((unorderedMatch ?? orderedMatch)?.[1] ?? "");
-      continue;
-    }
-
-    flushList();
-    paragraph.push(trimmed);
-  }
-
-  flushParagraph();
-  flushList();
-  return html.join("");
 }
 
 async function readNewsList(locale: Locale): Promise<NewsItem[]> {
