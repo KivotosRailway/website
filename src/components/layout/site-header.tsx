@@ -73,6 +73,24 @@ export function SiteHeader() {
             </Link>
           );
         })}
+        <div className="site-mobile-locale" aria-label="语言选择">
+          {locales.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={item === locale ? "active" : ""}
+              aria-pressed={item === locale}
+              onClick={() => {
+                setLocale(item);
+                applyLocale(item);
+              }}
+              aria-label={localeLabels[item]}
+              title={localeLabels[item]}
+            >
+              <span className="locale-button-label">{localeShortLabels[item]}</span>
+            </button>
+          ))}
+        </div>
       </nav>
       <div className="site-header-actions">
         <div className="site-locale" aria-label="语言选择">
