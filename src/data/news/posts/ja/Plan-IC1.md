@@ -7,14 +7,14 @@ tags:
   - 都市間奥深く
 category:
   - 建設計画
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 ## 概要
 このプロジェクトには、ディープインターシティ（浦江端-東山）と美遊インターシティ（廬島-浦江端）が含まれます。都市間深部区間は元のジャコバン深層線（彗星急行D線）をグレードアップしたもので、都市間深部区間は新設区間である。最高速度は200km/hです。
-!【駅一覧】(https://r2-image.kivotosrailway.com/2025/05/01/681398634fbc4.png)
+!【駅一覧】(https://assets.kivotos.cc/image/2025/05/01/681398634fbc4.png)
 
 # 配線
-![配線図](https://r2-image.kivotosrailway.com/2025/05/01/681398635f9b2.png)
+![配線図](https://assets.kivotos.cc/image/2025/05/01/681398635f9b2.png)
 
 ## 車を使う
 普通・大駅列車は8両編成のシティC編成、直通列車は9両編成の802形電車が使用されます。

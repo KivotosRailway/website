@@ -4,7 +4,7 @@ date: 2024-07-29 19:44:42
 tags:
 category:
   - 建設計画
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 MCサーバー鉄道輸送建設計画の第1期が発表されました（9/8に4次調整）。施工内容は以下の通りです。
 ## 都市鉄道再編計画

@@ -4,7 +4,7 @@ date: 2024-07-06 21:00:00
 tags:
 category:
   - 初めての方必見
-cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
+cover: https://assets.kivotos.cc/image/2025/05/01/681397ba4e763.png
 ---
 以下は、キヴォトス鉄道会社のエンターテイメント プロジェクトである Minecraft サーバーを紹介します。
 
@@ -17,7 +17,7 @@ cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
 サーバー監査グループ: 781202356
 
 ## 鉄道交通路線図
-![当サーバーの鉄道交通路線図(20250428現在)](https://r2-image.kivotosrailway.com/2025/05/01/681397eba60b8.png)
+![当サーバーの鉄道交通路線図(20250428現在)](https://assets.kivotos.cc/image/2025/05/01/681397eba60b8.png)
 各ルートごとに分けて紹介していきます！詳しくは「ルート紹介」をご覧ください～
 
 ## 設定の紹介
@@ -31,25 +31,25 @@ cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
 ### 神社
 Mutsuki233 によって建てられたこの神社は北海道地方にあり、新年のイベントが開催されています。
 Comet Express C線と万陵海環状線を利用してアクセスできます~
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396eb28788.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396f661df5.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396fd3a792.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813970761de9.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813973807ef1.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681397434f182.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139745d559d.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813974768073.png)
+![](https://assets.kivotos.cc/image/2025/05/01/681396eb28788.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/681396f661df5.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/681396fd3a792.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/6813970761de9.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813973807ef1.png)
+![](https://assets.kivotos.cc/image/2025/05/01/681397434f182.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139745d559d.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813974768073.png)
 
 ### 北海道工業地帯
 北海道の東側にある半島では、石を磨くことができます。
 eRAIL南北線と万陵海環状線を利用してアクセスできます~
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139760ab792.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813976606d65.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139760ab792.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813976606d65.png)
 
 ### 街の景色を垣間見る
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139776e716d.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139778e018b.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813977a9b9c9.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139776e716d.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139778e018b.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813977a9b9c9.png)
 
 ### グリーンブリッジエリアの様子
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139791cb565.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139791cb565.png)

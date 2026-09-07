@@ -4,7 +4,7 @@ date: 2025-05-13 21:12:42
 tags:
 category:
   - Route introduction
-cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
+cover: https://assets.kivotos.cc/image/2025/05/14/6823808e11777.png
 ---
 ## Line overview
 The Southeastern Mainline (English: Southeastern Mainline) is an important railway line in the Corricaus transport system. The line starts from Green Bridge Station, passes through Binjiang Community, Starlight Town, and Big and Small Conifer Islands, and then joins the eastern half of the original Sunrise Plains Loop east of Sunset Highlands, finally arriving at South Island Central Station.
@@ -13,10 +13,10 @@ The Southeast Main Line is not only one of the "Four Heavenly Kings", it is also
 
 ## The evolution of Xiaoyaogang branch line
 At the beginning, the southeast main line planned a branch line to Xiaoyaogang Industrial Zone.
-![Initial planning map of the Southeast Main Line](https://r2-image.kivotosrailway.com/2025/05/13/68236919b3ebe.png)
+![Initial planning map of the Southeast Main Line](https://assets.kivotos.cc/image/2025/05/13/68236919b3ebe.png)
 It has since evolved and become an independent line. Later, it was integrated with the Enoshima Line on the other side and became part of the Star Line (Star Light Town-Xiaoyao Port South). Now it has become a light railway that "will never be transformed".
-![The Xiaoyao Port Branch Line and Enoshima Line before unification](https://r2-image.kivotosrailway.com/2025/05/14/6823735cea4de.png)
-![Now it has become a light railway](https://r2-image.kivotosrailway.com/2025/05/14/682374369d005.png)
+![The Xiaoyao Port Branch Line and Enoshima Line before unification](https://assets.kivotos.cc/image/2025/05/14/6823735cea4de.png)
+![Now it has become a light railway](https://assets.kivotos.cc/image/2025/05/14/682374369d005.png)
 
 ## Vehicle
 The Southeast Main Line uses 4-car B90 light rail trains with a maximum speed of 60km/h.

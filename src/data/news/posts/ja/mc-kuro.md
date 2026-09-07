@@ -4,7 +4,7 @@ date: 2025-12-14 22:15:00
 tags:
 category:
   - 初めての方必見
-cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
+cover: https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png
 ---
 ///略歴///
 • 身長164cm
@@ -16,6 +16,6 @@ cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
 普段のハッキング作業に加えて、写真撮影、特に鉄道の撮影も大好きで、鉄道輸送において知られざる知恵を発揮しています。
 しかし、彼女は毎週日曜日の午後、定刻に姿を消してしまうのですが、その理由は誰も知りません...
 「ねえ、私が乗った電車を見てください。」
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec64a46a64.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec65021b01.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec64a46a64.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec65021b01.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png)

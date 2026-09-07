@@ -3,7 +3,7 @@ title: 服务器看板娘————黑川锦波
 date: 2025-12-14 22:15:00
 category:
   - 初来必看
-cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
+cover: https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png
 ---
 ///Biography///
 • 身高 164cm
@@ -15,6 +15,6 @@ cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
 在平时的黑客工作之外还热爱摄影，尤其是拍摄列车，在轨道交通方面展现出了不为人知的智慧。
 不过她在每周星期天下午准时消失，没人知道是为什么…
 “嗨嗨，看看我拍的列车嘛？”
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec64a46a64.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec65021b01.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec64a46a64.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec65021b01.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png)

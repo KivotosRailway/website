@@ -5,7 +5,7 @@ tag:
   - 科里考斯交通
 category:
   - 线路介绍
-cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
+cover: https://assets.kivotos.cc/image/2025/05/14/6823808e11777.png
 ---
 ## 线路概况
 东南主线（英文：Southeastern Mainline）是科里考斯交通系统的一条重要铁路线路。该线路始于绿桥站，沿途经过滨江社区、星光镇、大小针叶树岛，之后在日落高地以东接入原日出平原环线的东半环，最终抵达南岛中央站。
@@ -14,10 +14,10 @@ cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
 
 ## 逍遥港支线的演变
 在当初，东南主线就规划了前往逍遥港工业区的支线。
-![东南主线最初的规划图](https://r2-image.kivotosrailway.com/2025/05/13/68236919b3ebe.png)
+![东南主线最初的规划图](https://assets.kivotos.cc/image/2025/05/13/68236919b3ebe.png)
 此后经过演变，该支线成为了独立线路。之后与对岸的江之岛线统合，成为了星光线的一部分（星光镇-逍遥港南），现在则是成为了“永不改造”的轻便铁路。
-![统合前的逍遥港支线和江之岛线](https://r2-image.kivotosrailway.com/2025/05/14/6823735cea4de.png)
-![现在已经化身轻便铁路了](https://r2-image.kivotosrailway.com/2025/05/14/682374369d005.png)
+![统合前的逍遥港支线和江之岛线](https://assets.kivotos.cc/image/2025/05/14/6823735cea4de.png)
+![现在已经化身轻便铁路了](https://assets.kivotos.cc/image/2025/05/14/682374369d005.png)
 
 ## 车辆
 东南主线采用4节B90型轻轨列车，最高速度可达60km/h。

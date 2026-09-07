@@ -4,7 +4,7 @@ date: 2024-07-29 19:44:42
 tags:
 category:
   - 建設規劃
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 我們的MC服務器軌道交通第一期建設規劃已經公佈（於9/8第四次進行了調整），建設內容如下：
 ## 市區鐵路重塑計劃

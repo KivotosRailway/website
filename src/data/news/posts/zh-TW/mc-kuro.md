@@ -4,7 +4,7 @@ date: 2025-12-14 22:15:00
 tags:
 category:
   - 初來必看
-cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
+cover: https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png
 ---
 ///Biography///
 • 身高 164cm
@@ -16,6 +16,6 @@ cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png
 在平時的黑客工作之外還熱愛攝影，尤其是拍攝列車，在軌道交通方面展現出了不爲人知的智慧。
 不過她在每週星期天下午準時消失，沒人知道是爲什麼…
 “嗨嗨，看看我拍的列車嘛？”
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec64a46a64.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec65021b01.png)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec5ea96c8e.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec64a46a64.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec65021b01.png)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec5ea96c8e.png)

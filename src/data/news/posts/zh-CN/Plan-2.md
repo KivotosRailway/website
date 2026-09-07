@@ -5,7 +5,7 @@ tags:
   - 彗星快线
 category:
   - 建设规划
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 经雅各宾俱乐部批准，KR服务器第二期建设规划正式公示：
 ## 快线现代化计划
@@ -23,7 +23,7 @@ cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
 * 千年铁道科学院1号线 一期&西延：南岸中心-KR总部-青原峡-千年铁科院
 ## 调整内容
 * 星野电铁 星野本线 一期&二期：南岸中心-六甲东-有栖川，其中南岸中心-雪降为心夏线既有路段改造。
-![星野本线六甲东以北走向](https://r2-image.kivotosrailway.com/2025/01/06/677bd23abc537.png)
+![星野本线六甲东以北走向](https://assets.kivotos.cc/image/2025/01/06/677bd23abc537.png)
 * 星野地铁 白子线 一期：南岸中心-纪念-博南，其中纪念-南岛中央为彗星快线C既有路段改造。（也是彗星快线C提质改造的一部分）
 * 千年铁道科学院属轨道交通系统 D.U.白鸟区1号线：南区二高-多摩川
 * 千年铁道科学院属轨道交通系统 D.U.白鸟区旅客自动输送系统（APM）：中央大道-克罗诺斯学园

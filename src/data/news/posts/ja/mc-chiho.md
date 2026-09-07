@@ -4,7 +4,7 @@ date: 2025-12-14 22:15:00
 tags:
 category:
   - 初めての方必見
-cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec81f0d558.png
+cover: https://assets.kivotos.cc/image/2025/12/14/693ec81f0d558.png
 ---
 ///略歴///
 • 誕生日9月4日
@@ -15,6 +15,6 @@ cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec81f0d558.png
 彼女が持っているショルダーバッグには、女の子が通常持ち歩く化粧品だけでなく、彼女が持ち歩くコンピュータルームのガジェットもいくつか入っています。
 同時に、デザートも食べるのが好きです。開発中や休憩中は、いつもデザート、特に都心部のムースケーキを食べて時間を潰します。 。 。 。
 「そうですね…サーバーのインジケーターは正常ですよ～」
-![](https://r2-image.kivotosrailway.com/2025/12/14/693e5bbe608e5.jpg)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec8c79b4b8.jpg)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec8d313ba2.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693e5bbe608e5.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec8c79b4b8.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec8d313ba2.jpg)

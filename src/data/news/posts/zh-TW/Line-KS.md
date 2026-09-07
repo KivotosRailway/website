@@ -4,7 +4,7 @@ date: 2025-05-13 21:12:42
 tags:
 category:
   - 線路介紹
-cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
+cover: https://assets.kivotos.cc/image/2025/05/14/6823808e11777.png
 ---
 ## 線路概況
 東南主線（英文：Southeastern Mainline）是科裏考斯交通系統的一條重要鐵路線路。該線路始於綠橋站，沿途經過濱江社區、星光鎮、大小針葉樹島，之後在日落高地以東接入原日出平原環線的東半環，最終抵達南島中央站。
@@ -13,10 +13,10 @@ cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
 
 ## 逍遙港支線的演變
 在當初，東南主線就規劃了前往逍遙港工業區的支線。
-![東南主線最初的規劃圖](https://r2-image.kivotosrailway.com/2025/05/13/68236919b3ebe.png)
+![東南主線最初的規劃圖](https://assets.kivotos.cc/image/2025/05/13/68236919b3ebe.png)
 此後經過演變，該支線成爲了獨立線路。之後與對岸的江之島線統合，成爲了星光線的一部分（星光鎮-逍遙港南），現在則是成爲了“永不改造”的輕便鐵路。
-![統合前的逍遙港支線和江之島線](https://r2-image.kivotosrailway.com/2025/05/14/6823735cea4de.png)
-![現在已經化身輕便鐵路了](https://r2-image.kivotosrailway.com/2025/05/14/682374369d005.png)
+![統合前的逍遙港支線和江之島線](https://assets.kivotos.cc/image/2025/05/14/6823735cea4de.png)
+![現在已經化身輕便鐵路了](https://assets.kivotos.cc/image/2025/05/14/682374369d005.png)
 
 ## 車輛
 東南主線採用4節B90型輕軌列車，最高速度可達60km/h。

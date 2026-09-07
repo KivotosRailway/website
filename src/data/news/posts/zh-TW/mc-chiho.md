@@ -4,7 +4,7 @@ date: 2025-12-14 22:15:00
 tags:
 category:
   - 初來必看
-cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec81f0d558.png
+cover: https://assets.kivotos.cc/image/2025/12/14/693ec81f0d558.png
 ---
 ///Biography///
 • 生日 9月4日
@@ -15,6 +15,6 @@ cover: https://r2-image.kivotosrailway.com/2025/12/14/693ec81f0d558.png
 她隨身的挎包中不僅裝着女孩紙日常會帶的化妝品，還有一些機房小工具隨身帶着
 同時還比較喜歡喫些甜點，在開發或者休息的時候總會拿一些甜點來打發時間，尤其是市中心的慕斯小蛋糕。。。。
 "嗯。。。服務器各項指標都正常呢～"
-![](https://r2-image.kivotosrailway.com/2025/12/14/693e5bbe608e5.jpg)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec8c79b4b8.jpg)
-![](https://r2-image.kivotosrailway.com/2025/12/14/693ec8d313ba2.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693e5bbe608e5.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec8c79b4b8.jpg)
+![](https://assets.kivotos.cc/image/2025/12/14/693ec8d313ba2.jpg)

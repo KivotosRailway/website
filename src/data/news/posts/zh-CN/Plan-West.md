@@ -12,7 +12,7 @@ tag:
   - 雅各宾纵深线
 category:
   - 建设规划
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 注意：以下规划随时都有可能面目全非
 

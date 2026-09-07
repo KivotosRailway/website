@@ -4,7 +4,7 @@ date: 2025-08-23 23:16:00
 tags:
 category:
   - 初めての方必見
-cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
+cover: https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png
 ---
 ///略歴///
 • 身長175cm
@@ -17,4 +17,4 @@ cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
 余暇には、友人や同僚と冗談を言うのが好きです。彼女の非公式な性格は、ハンドルを握る彼女とはまったく異なります。
 しかし、彼女は違反行為に遭遇した場合、無条件に許す「良い女性」ではありません...
 「こんにちは、どの停留所に行きたいですか？」
-![](https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png)
+![](https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png)

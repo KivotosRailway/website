@@ -3,7 +3,7 @@ title: 服务器看板娘————羽衣唯子
 date: 2025-08-23 23:16:00
 category:
   - 初来必看
-cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
+cover: https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png
 ---
 ///Biography///
 • 身高 175cm
@@ -16,4 +16,4 @@ cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
 闲暇时喜欢和朋友同事插科打诨，不拘小节的性格与在方向盘前的她判若两人。
 但是遇到了违规的事情，她可不是一位无条件纵容的“好好女士”...
 “你好，请问你想去哪一站?”
-![](https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png)
+![](https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png)

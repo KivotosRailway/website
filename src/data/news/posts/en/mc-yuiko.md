@@ -4,7 +4,7 @@ date: 2025-08-23 23:16:00
 tags:
 category:
   - A must-see for first time visitors
-cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
+cover: https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png
 ---
 ///Biography///
 • Height 175cm
@@ -17,4 +17,4 @@ His usual work attitude is always diligent and diligent, and he handles things c
 In her spare time, she likes to joke around with friends and colleagues. Her informal personality is completely different from her behind the wheel.
 But when she encounters violations, she is not a "good lady" who condones unconditionally...
 "Hello, which stop do you want to go to?"
-![](https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png)
+![](https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png)

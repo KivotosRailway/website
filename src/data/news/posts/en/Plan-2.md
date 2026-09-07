@@ -5,7 +5,7 @@ tags:
   - Comet Express
 category:
   - construction planning
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 With the approval of the Jacobin Club, the second phase construction plan of the KR server is officially announced:
 ## Express Line Modernization Plan
@@ -23,7 +23,7 @@ With the approval of the Jacobin Club, the second phase construction plan of the
 * Millennium Railway Academy Line 1 Phase 1 & West Extension: Nan'an Center-KR Headquarters-Qingyuan Gorge-Millennium Railway Academy
 ## Adjust content
 * Hoshino Electric Railway Hoshino Main Line Phase 1 & 2: Nankan Center-Rokko East-Arisikawa, of which Nankan Center-Sukiyuki will be the reconstruction of the existing section of the Shinka Line.
-![Hoshino Main Line running north of Rokko East](https://r2-image.kivotosrailway.com/2025/01/06/677bd23abc537.png)
+![Hoshino Main Line running north of Rokko East](https://assets.kivotos.cc/image/2025/01/06/677bd23abc537.png)
 * Hoshino Metro Baiko Line Phase 1: South Bank Center-Memorial-Bonan, of which Memorial-South Island Central is the reconstruction of the existing section of Comet Express Line C. (It is also part of the upgrade and transformation of Comet Express C)
 * Millennium Railway Academy belongs to the rail transit system D.U. Shiratori District Line 1: South District No. 2 High School-Tama River
 * Millennium Railway Academy belongs to the rail transit system D.U. Shiratori Area Automatic Passenger Transport System (APM): Chuo-dori-Kronos Academy

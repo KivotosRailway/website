@@ -4,7 +4,7 @@ date: 2025-08-23 23:16:00
 tags:
 category:
   - 初來必看
-cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
+cover: https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png
 ---
 ///Biography///
 • 身高 175cm
@@ -17,4 +17,4 @@ cover: https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png
 閒暇時喜歡和朋友同事插科打諢，不拘小節的性格與在方向盤前的她判若兩人。
 但是遇到了違規的事情，她可不是一位無條件縱容的“好好女士”...
 “你好，請問你想去哪一站?”
-![](https://r2-image.kivotosrailway.com/2025/09/07/68bd44be2b8d3.png)
+![](https://assets.kivotos.cc/image/2025/09/07/68bd44be2b8d3.png)

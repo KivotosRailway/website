@@ -65,7 +65,7 @@ function stripFrontmatter(markdown: string): string {
   return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").trim();
 }
 
-const DEFAULT_NEWS_COVER = "https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png";
+const DEFAULT_NEWS_COVER = "https://assets.kivotos.cc/image/2025/05/01/681397ba4e763.png";
 
 function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string): NewsItem | null {
   const title = raw.title?.trim();

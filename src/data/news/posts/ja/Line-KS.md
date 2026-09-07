@@ -4,7 +4,7 @@ date: 2025-05-13 21:12:42
 tags:
 category:
   - ルート紹介
-cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
+cover: https://assets.kivotos.cc/image/2025/05/14/6823808e11777.png
 ---
 ## ラインの概要
 サウスイースタン幹線（サウスイースタン幹線、英語:Southeastern Mainline）は、コリカス交通システムにおける重要な鉄道路線である。この路線はグリーン ブリッジ駅から出発し、浜江コミュニティ、スターライト タウン、大小コニファー諸島を通過し、サンセット ハイランドの東で元のサンライズ プレーンズ ループの東半分に合流して、最後に南島中央駅に到着します。
@@ -13,10 +13,10 @@ cover: https://r2-image.kivotosrailway.com/2025/05/14/6823808e11777.png
 
 ## 小ヤオ港支線の進化
 当初、東南幹線は小要港工業区までの支線を計画していた。
-!【東南本線の当初計画図】(https://r2-image.kivotosrailway.com/2025/05/13/68236919b3ebe.png)
+!【東南本線の当初計画図】(https://assets.kivotos.cc/image/2025/05/13/68236919b3ebe.png)
 その後進化し、独立したラインになりました。その後、反対側の江ノ島線と統合され、スターライン（スターライトタウン～小羊港南）の一部となった。今では「決して姿を変えることのない」軽便鉄道となった。
-!【統合前の小要港支線と江ノ島線】(https://r2-image.kivotosrailway.com/2025/05/14/6823735cea4de.png)
-![軽便鉄道になりました](https://r2-image.kivotosrailway.com/2025/05/14/682374369d005.png)
+!【統合前の小要港支線と江ノ島線】(https://assets.kivotos.cc/image/2025/05/14/6823735cea4de.png)
+![軽便鉄道になりました](https://assets.kivotos.cc/image/2025/05/14/682374369d005.png)
 
 ## 車両
 東南本線は最高速度60km/hの4両編成B90ライトレール列車を使用しています。

@@ -4,7 +4,7 @@ date: 2024-09-09 00:00:00
 tags:
 category:
   - 建設規劃
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 注意：以下規劃隨時都有可能面目全非
 

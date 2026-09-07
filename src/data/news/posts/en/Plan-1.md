@@ -4,7 +4,7 @@ date: 2024-07-29 19:44:42
 tags:
 category:
   - construction planning
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 The first phase of our MC server rail transit construction plan has been announced (adjusted for the fourth time on 9/8). The construction content is as follows:
 ## Urban Railway Reshaping Plan

@@ -4,7 +4,7 @@ date: 2024-09-09 00:00:00
 tags:
 category:
   - 建設計画
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 注: 以下の計画は、いつでも認識できないほど変更される可能性があります。
 
