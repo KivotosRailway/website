@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import type { Locale } from "@/lib/i18n";
 import { markdownToHtml } from "@/lib/markdown";
+import { imageMap } from "@/lib/image-map.generated";
 
 export type NewsItem = {
   id: string;
@@ -71,7 +72,8 @@ function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string)
   const date = raw.date?.trim() || "未注明日期";
   const category = (Array.isArray(raw.category) ? raw.category[0] : raw.category)?.trim() || "未分类";
   const tags = raw.tags ?? [];
-  const cover = raw.cover?.trim() || DEFAULT_NEWS_COVER;
+  const coverSource = raw.cover?.trim() || DEFAULT_NEWS_COVER;
+  const cover = imageMap[coverSource] ?? coverSource;
   const slug = raw.slug?.trim() || fileName.replace(/\.md$/i, "");
 
   if (!title) {
