@@ -3,7 +3,7 @@ title: 介绍一下我们的MC服务器~
 date: 2024-07-06 21:00:00
 category:
   - 初来必看
-cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
+cover: https://assets.kivotos.cc/image/2025/05/01/681397ba4e763.png
 ---
 下面介绍我们基沃托斯铁道公团的娱乐项目————Minecraft服务器！
 
@@ -16,7 +16,7 @@ cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
 服务器审核群：781202356
 
 ## 轨道交通线路图
-![本服的轨道交通线路图（截止20250428）](https://r2-image.kivotosrailway.com/2025/05/01/681397eba60b8.png)
+![本服的轨道交通线路图（截止20250428）](https://assets.kivotos.cc/image/2025/05/01/681397eba60b8.png)
 每一条线路都会有单独介绍哦！详情见“线路介绍”板块~
 
 ## 设定介绍
@@ -32,26 +32,26 @@ cover: https://r2-image.kivotosrailway.com/2025/05/01/681397ba4e763.png
 ### 神社
 由Mutsuki233建造，位于北海道地区的神社，曾举办过新年活动。
 可乘坐彗星快线C线和万灵海环状线到达~
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396eb28788.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396f661df5.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681396fd3a792.jpg)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813970761de9.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813973807ef1.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/681397434f182.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139745d559d.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813974768073.png)
+![](https://assets.kivotos.cc/image/2025/05/01/681396eb28788.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/681396f661df5.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/681396fd3a792.jpg)
+![](https://assets.kivotos.cc/image/2025/05/01/6813970761de9.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813973807ef1.png)
+![](https://assets.kivotos.cc/image/2025/05/01/681397434f182.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139745d559d.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813974768073.png)
 
 ### 北海道工业区
 位于北海道地区东侧的半岛上，可以刷取石头哦。
 可乘坐eRAIL南北线和万灵海环状线到达~
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139760ab792.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813976606d65.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139760ab792.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813976606d65.png)
 
 ### 城市景色一瞥
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139776e716d.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139778e018b.png)
-![](https://r2-image.kivotosrailway.com/2025/05/01/6813977a9b9c9.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139776e716d.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139778e018b.png)
+![](https://assets.kivotos.cc/image/2025/05/01/6813977a9b9c9.png)
 
 ### 绿桥地区一瞥
-![](https://r2-image.kivotosrailway.com/2025/05/01/68139791cb565.png)
+![](https://assets.kivotos.cc/image/2025/05/01/68139791cb565.png)
 

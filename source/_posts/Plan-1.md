@@ -24,7 +24,7 @@ tag:
   - 地道远郊线
 category:
   - 建设规划
-cover: https://r2-image.kivotosrailway.com/2025/01/07/677d312c60fdc.png
+cover: https://assets.kivotos.cc/image/2025/01/07/677d312c60fdc.png
 ---
 我们的MC服务器轨道交通第一期建设规划已经公布（于9/8第四次进行了调整），建设内容如下：
 ## 市区铁路重塑计划
