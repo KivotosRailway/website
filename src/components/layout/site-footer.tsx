@@ -6,7 +6,7 @@ import { applyLocale, getInitialLocale, getLocaleMessages, type Locale } from "@
 
 const footerColumnHrefs = [
   ["/policy/user-agreement", "/policy/privacy-policy", "/policy/disclaimer", "/policy/resource-pack"],
-  ["/about", "/join-us"],
+  ["/about", "/members", "/join-us"],
   ["mailto:connect@kivotos.cc", "mailto:infringement@kivotos.cc"],
 ] as const;
 

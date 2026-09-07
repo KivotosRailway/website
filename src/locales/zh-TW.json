@@ -30,7 +30,7 @@
     "social": ["微博", "微信", "X", "LinkedIn", "影片"],
     "columns": [
       { "title": "法律資訊", "links": ["服務協議", "隱私政策", "免責聲明", "資源包使用協議"] },
-      { "title": "關於我們", "links": ["團隊簡介", "加入我們"] },
+      { "title": "關於我們", "links": ["團隊簡介", "成員一覽", "加入我們"] },
       { "title": "聯絡我們", "links": ["全域郵箱：connect@kivotos.cc", "素材侵權舉報：infringement@kivotos.cc"] }
     ],
     "legal": ["KR Wiki", "狀態監控", "友情鏈接"],

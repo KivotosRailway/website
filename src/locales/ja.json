@@ -30,7 +30,7 @@
     "social": ["Weibo", "WeChat", "X", "LinkedIn", "動画"],
     "columns": [
       { "title": "法務情報", "links": ["利用規約", "プライバシー", "免責事項", "リソースパック規約"] },
-      { "title": "私たちについて", "links": ["チーム紹介", "参加する"] },
+      { "title": "私たちについて", "links": ["チーム紹介", "メンバー一覧", "参加する"] },
       { "title": "お問い合わせ", "links": ["総合窓口：connect@kivotos.cc", "権利侵害報告：infringement@kivotos.cc"] }
     ],
     "legal": ["KR Wiki", "サービス状況", "リンク集"],

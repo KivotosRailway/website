@@ -30,7 +30,7 @@
     "social": ["Weibo", "WeChat", "X", "LinkedIn", "Video"],
     "columns": [
       { "title": "Legal", "links": ["Terms of service", "Privacy policy", "Disclaimer", "Resource pack terms"] },
-      { "title": "About us", "links": ["Our team", "Join us"] },
+      { "title": "About us", "links": ["Our team", "Members", "Join us"] },
       { "title": "Contact us", "links": ["General: connect@kivotos.cc", "Copyright: infringement@kivotos.cc"] }
     ],
     "legal": ["KR Wiki", "Service status", "Links"],
