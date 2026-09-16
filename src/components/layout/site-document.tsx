@@ -1,11 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Suspense } from "react";
 import "@/app/globals.css";
-import type { Locale } from "@/lib/i18n";
-import { LocaleProvider } from "@/components/layout/locale-context";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { LocaleUrlSync } from "@/components/layout/locale-url-sync";
 
 export const metadata: Metadata = {
   title: {
@@ -25,10 +19,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-  locale = "zh-Hans",
-}: Readonly<{ children: React.ReactNode; locale?: Locale }>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang="zh-Hans" suppressHydrationWarning>
       <head>
         {/* Run during HTML parsing, before the body can paint. */}
         <script
@@ -82,12 +75,7 @@ export default function RootLayout({
           })();` }}
         />
       </head>
-      <body>
-        <LocaleProvider locale={locale}>
-        <Suspense fallback={null}><LocaleUrlSync /></Suspense>
-        <SiteHeader />{children}<SiteFooter />
-        </LocaleProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

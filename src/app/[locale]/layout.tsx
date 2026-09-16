@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
-import SiteDocument from "@/components/layout/site-document";
+import { SiteShell } from "@/components/layout/site-shell";
 import { getLocaleMessages, locales, matchLocale } from "@/lib/i18n";
 
-export { viewport } from "@/components/layout/site-document";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -39,5 +38,5 @@ export default async function LocaleLayout({ children, params }: {
   const { locale } = await params;
   const canonicalLocale = matchLocale(locale);
   if (!canonicalLocale) notFound();
-  return <SiteDocument locale={canonicalLocale}>{children}</SiteDocument>;
+  return <SiteShell locale={canonicalLocale}>{children}</SiteShell>;
 }
