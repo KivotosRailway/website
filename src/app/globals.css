@@ -1,11 +1,14 @@
 @import "@fontsource-variable/noto-sans/wght.css";
 @import "@fontsource-variable/noto-sans-sc/wght.css";
 
-:root { --ink: #0b1622; --blue: #1267d8; --paper: #ffffff; --soft: #f5f7f9; --muted: #75828d; --panel: #f6f7f8; }
+:root { --ink: #0b1622; --blue: #1267d8; --paper: #ffffff; --soft: #f5f7f9; --muted: #75828d; --panel: #f6f7f8; color-scheme: light dark; }
 * { box-sizing: border-box; }
 html, body { min-height: 100%; margin: 0; }
-html { overflow-x: hidden; }
+html { overflow-x: hidden; background: #fff; }
 body { color: var(--ink); background: var(--paper); font-family: "Noto Sans SC", "Noto Sans", Arial, "Microsoft YaHei", sans-serif; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]), html:not([data-theme]) body { background: #10151d; color-scheme: dark; }
+}
 a { color: inherit; text-decoration: none; }
 .site-header { display: flex; align-items: center; height: 128px; gap: 32px; padding-inline: max(24px, calc((100% - 1200px) / 2)); background: #fff; }
 .site-logo { display: inline-flex; align-items: center; min-width: 248px; }
