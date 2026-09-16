@@ -1,15 +1,17 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
-import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import { getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 const ITEMS_PER_PAGE = 12;
 
 export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [currentPage, setCurrentPage] = useState(1);
   const messages = getLocaleMessages(locale);
   const news = catalog[locale];
@@ -88,7 +90,7 @@ export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
       <div className="news-list-grid">
         {paginatedNews.map((item) => (
           <article key={item.id} className="news-list-card">
-            <Link href={item.href} className="news-list-link">
+            <Link href={withLocale(item.href, locale)} className="news-list-link">
               <div className="news-list-cover" style={{ backgroundImage: `url(${item.cover})` }} />
               <div className="news-list-meta">
                 <span className="news-list-tag">{item.category}</span>

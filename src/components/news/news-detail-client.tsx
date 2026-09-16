@@ -1,17 +1,19 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
-import { getAiTranslationNotice, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import { getAiTranslationNotice, getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 import { markdownToHtml } from "@/lib/markdown";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsShare } from "@/components/news/news-share";
 
 export function NewsDetailClient({ catalog, slug }: { catalog: Record<Locale, NewsItem[]>; slug: string }) {
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const messages = getLocaleMessages(locale);
-  const item = catalog[locale].find((entry) => entry.slug === slug) ?? catalog["zh-CN"].find((entry) => entry.slug === slug);
+  const item = catalog[locale].find((entry) => entry.slug === slug) ?? catalog["zh-Hans"].find((entry) => entry.slug === slug);
 
   useEffect(() => {
     const syncLocale = () => setLocale(getInitialLocale());
@@ -24,16 +26,16 @@ export function NewsDetailClient({ catalog, slug }: { catalog: Record<Locale, Ne
     };
   }, []);
 
-  if (!item) return <main className="news-detail-page"><div className="news-detail-inner"><p>未找到该文章。</p><Link href="/news">{messages.common.backToNews}</Link></div></main>;
+  if (!item) return <main className="news-detail-page"><div className="news-detail-inner"><p>未找到该文章。</p><Link href={withLocale("/news", locale)}>{messages.common.backToNews}</Link></div></main>;
 
   return <main className="news-detail-page">
     <div className="news-detail-inner">
-      <Link href="/news" className="back-link">← {messages.common.backToNews}</Link>
+      <Link href={withLocale("/news", locale)} className="back-link">← {messages.common.backToNews}</Link>
       <article className="news-detail-card">
         <p className="news-detail-tag">{item.category}</p>
         <h1>{item.title}</h1>
         <time>{item.date}</time>
-        {locale !== "zh-CN" && (
+        {locale !== "zh-Hans" && (
           <div className="news-detail-ai-banner" aria-label="AI translated content">
             {getAiTranslationNotice(locale)}
           </div>

@@ -1,13 +1,15 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getInitialLocale, type Locale } from "@/lib/i18n";
+import { getInitialLocale, withLocale, type Locale } from "@/lib/i18n";
 
 export type HttpStatusCode = 403 | 404 | 500 | 502 | 503 | 504;
 
 const statusMessages: Record<Locale, Record<HttpStatusCode, string>> = {
-  "zh-CN": {
+  "zh-Hans": {
     403: "你没有权限访问此页面",
     404: "人与人的悲欢不尽相同",
     500: "服务器遇到了一点问题",
@@ -15,7 +17,7 @@ const statusMessages: Record<Locale, Record<HttpStatusCode, string>> = {
     503: "服务暂时不可用",
     504: "服务响应超时",
   },
-  "zh-TW": {
+  "zh-Hant": {
     403: "你沒有權限存取此頁面",
     404: "人與人的悲歡並不相同",
     500: "伺服器遇到了一點問題",
@@ -31,7 +33,7 @@ const statusMessages: Record<Locale, Record<HttpStatusCode, string>> = {
     503: "The service is temporarily unavailable",
     504: "The service took too long to respond",
   },
-  ja: {
+  jp: {
     403: "このページにアクセスする権限がありません",
     404: "人それぞれ、喜びも悲しみも違う",
     500: "サーバーで問題が発生しました",
@@ -42,10 +44,10 @@ const statusMessages: Record<Locale, Record<HttpStatusCode, string>> = {
 };
 
 const backLabels: Record<Locale, string> = {
-  "zh-CN": "回到上一页",
-  "zh-TW": "回到上一頁",
+  "zh-Hans": "回到上一页",
+  "zh-Hant": "回到上一頁",
   en: "Go back",
-  ja: "前のページに戻る",
+  jp: "前のページに戻る",
 };
 
 function parseLocalizedMessages(source: string): Partial<Record<Locale, string[]>> {
@@ -53,7 +55,7 @@ function parseLocalizedMessages(source: string): Partial<Record<Locale, string[]
   let locale: Locale | null = null;
 
   for (const line of source.split(/\r?\n/)) {
-    const localeMatch = line.match(/^(zh-CN|zh-TW|en|ja):\s*$/);
+    const localeMatch = line.match(/^(zh-Hans|zh-Hant|en|jp):\s*$/);
     if (localeMatch) {
       locale = localeMatch[1] as Locale;
       messages[locale] = [];
@@ -68,7 +70,7 @@ function parseLocalizedMessages(source: string): Partial<Record<Locale, string[]
 }
 
 export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [randomMessages, setRandomMessages] = useState<Partial<Record<Locale, string[]>>>({});
   const [randomMessage, setRandomMessage] = useState<string | null>(null);
 
@@ -93,7 +95,7 @@ export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
   }, [code]);
 
   useEffect(() => {
-    const messages = randomMessages[locale] ?? randomMessages["zh-CN"];
+    const messages = randomMessages[locale] ?? randomMessages["zh-Hans"];
     if (!messages?.length) return;
     setRandomMessage(messages[Math.floor(Math.random() * messages.length)]);
   }, [locale, randomMessages]);
@@ -103,7 +105,7 @@ export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
       window.history.back();
       return;
     }
-    window.location.assign("/");
+    window.location.assign(withLocale("/", locale));
   };
 
   return (

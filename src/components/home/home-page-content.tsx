@@ -1,12 +1,14 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { NewsItem } from "@/data/news";
-import { applyLocale, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import { applyLocale, getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale, NewsItem[]> }) {
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
 
   useEffect(() => {
     const syncLocale = (nextLocale: Locale) => setLocale(nextLocale);
@@ -38,7 +40,7 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
   }, []);
 
   const t = getLocaleMessages(locale);
-  const visibleNews = newsByLocale[locale] ?? newsByLocale["zh-CN"] ?? [];
+  const visibleNews = newsByLocale[locale] ?? newsByLocale["zh-Hans"] ?? [];
 
   return (
     <main className="home-page">
@@ -56,7 +58,7 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
       <section className="home-news" id="about" aria-labelledby="latest-news-title">
         <div className="news-header">
           <h2 id="latest-news-title">{t.home.latest}</h2>
-          <Link href="/news" className="news-more-link">
+          <Link href={withLocale("/news", locale)} className="news-more-link">
             {t.home.more} <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -64,7 +66,7 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
         <div className="news-grid" aria-label={t.home.latest}>
           {visibleNews.slice(0, 3).map((post) => (
             <article key={post.id} className="news-card">
-              <Link href={post.href} className="news-card-link" aria-label={post.title}>
+              <Link href={withLocale(post.href, locale)} className="news-card-link" aria-label={post.title}>
                 <div className="news-visual" style={{ backgroundImage: `url(${post.cover})` }} />
                 <h3>{post.title}</h3>
                 <time dateTime={post.date}>{post.date}</time>

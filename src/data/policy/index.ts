@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import type { Locale } from "@/lib/i18n";
+import { localeContentDirectory, type Locale } from "@/lib/i18n";
 import { parseFrontmatter } from "@/data/news";
 import { markdownToHtml } from "@/lib/markdown";
 
@@ -21,7 +21,7 @@ function isPolicySlug(slug: string): slug is PolicySlug {
 }
 
 async function readPolicy(slug: PolicySlug, locale: Locale): Promise<PolicyDocument | null> {
-  const filePath = path.join(process.cwd(), "src", "data", "policy", locale, `${slug}.md`);
+  const filePath = path.join(process.cwd(), "src", "data", "policy", localeContentDirectory[locale], `${slug}.md`);
 
   try {
     const body = await fs.readFile(filePath, "utf-8");
@@ -38,7 +38,7 @@ async function readPolicy(slug: PolicySlug, locale: Locale): Promise<PolicyDocum
       translationLabel,
       body: content,
       html: markdownToHtml(content),
-      markdownFile: `src/data/policy/${locale}/${slug}.md`,
+      markdownFile: `src/data/policy/${localeContentDirectory[locale]}/${slug}.md`,
     };
   } catch {
     return null;
@@ -49,7 +49,7 @@ export async function getPolicyCatalog(slug: string): Promise<Partial<Record<Loc
   if (!isPolicySlug(slug)) return {};
 
   const entries = await Promise.all(
-    (["zh-CN", "zh-TW", "en", "ja"] as Locale[]).map(async (locale) => [locale, await readPolicy(slug, locale)] as const),
+    (["zh-Hans", "zh-Hant", "en", "jp"] as Locale[]).map(async (locale) => [locale, await readPolicy(slug, locale)] as const),
   );
 
   return Object.fromEntries(entries.filter(([, document]) => document)) as Partial<Record<Locale, PolicyDocument>>;

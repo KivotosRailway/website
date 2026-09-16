@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
@@ -43,7 +45,7 @@ function applyTheme(preference: ThemePreference) {
 
 export function ThemeToggle() {
   const [themePreference, setThemePreference] = useState<ThemePreference>("system");
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
 
   useEffect(() => {
     const syncTheme = () => {

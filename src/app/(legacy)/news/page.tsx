@@ -3,12 +3,16 @@ import { getNewsCatalog } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { NewsList } from "@/components/news/news-list";
 import { NewsPageHeading } from "@/components/news/news-page-heading";
+import { getLocaleMessages, isLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "新闻",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale?: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return { title: getLocaleMessages(isLocale(locale) ? locale : "zh-Hans").common.news };
+}
 
-export default async function NewsPage() {
+export default async function NewsPage({ params }: { params: Promise<{ locale?: string }> }) {
+  const { locale } = await params;
+  const messages = getLocaleMessages(isLocale(locale) ? locale : "zh-Hans");
   const catalog = await getNewsCatalog();
 
   return (
@@ -22,7 +26,7 @@ export default async function NewsPage() {
       </div>
       <div className="page-bottom-nav">
         <div className="page-bottom-nav-inner">
-          <PageBreadcrumb items={[{ label: "首页", href: "/" }, { label: "新闻" }]} />
+          <PageBreadcrumb items={[{ label: messages.common.home, href: "/" }, { label: messages.common.news }]} />
         </div>
       </div>
     </main>

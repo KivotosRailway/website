@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import type { Locale } from "@/lib/i18n";
+import { localeContentDirectory, type Locale } from "@/lib/i18n";
 import { markdownToHtml } from "@/lib/markdown";
 import { imageMap } from "@/lib/image-map.generated";
 
@@ -95,7 +95,7 @@ function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string)
 }
 
 async function readNewsList(locale: Locale): Promise<NewsItem[]> {
-  const directory = path.join(process.cwd(), "src", "data", "news", "posts", locale);
+  const directory = path.join(process.cwd(), "src", "data", "news", "posts", localeContentDirectory[locale]);
 
   try {
     const files = (await fs.readdir(directory))
@@ -123,15 +123,15 @@ async function readNewsList(locale: Locale): Promise<NewsItem[]> {
   }
 }
 
-export async function getNewsList(locale: Locale = "zh-CN"): Promise<NewsItem[]> {
+export async function getNewsList(locale: Locale = "zh-Hans"): Promise<NewsItem[]> {
   const items = await readNewsList(locale);
-  return locale === "zh-CN" || items.length > 0 ? items : readNewsList("zh-CN");
+  return locale === "zh-Hans" || items.length > 0 ? items : readNewsList("zh-Hans");
 }
 
 export async function getNewsCatalog(): Promise<Record<Locale, NewsItem[]>> {
-  const source = await readNewsList("zh-CN");
-  const entries = await Promise.all((["zh-CN", "zh-TW", "en", "ja"] as Locale[]).map(async (locale) => {
-    if (locale === "zh-CN") return [locale, source] as const;
+  const source = await readNewsList("zh-Hans");
+  const entries = await Promise.all((["zh-Hans", "zh-Hant", "en", "jp"] as Locale[]).map(async (locale) => {
+    if (locale === "zh-Hans") return [locale, source] as const;
 
     const translated = await readNewsList(locale);
     const bySlug = new Map(translated.map((item) => [item.slug, item]));
@@ -140,12 +140,12 @@ export async function getNewsCatalog(): Promise<Record<Locale, NewsItem[]>> {
   return Object.fromEntries(entries) as Record<Locale, NewsItem[]>;
 }
 
-export async function getNewsBySlug(slug: string, locale: Locale = "zh-CN"): Promise<NewsItem | null> {
+export async function getNewsBySlug(slug: string, locale: Locale = "zh-Hans"): Promise<NewsItem | null> {
   const items = await getNewsList(locale);
   return items.find((item) => item.slug === slug) ?? null;
 }
 
-export async function getLatestNews(locale: Locale = "zh-CN") {
+export async function getLatestNews(locale: Locale = "zh-Hans") {
   const items = await getNewsList(locale);
   return items.slice(0, 3);
 }

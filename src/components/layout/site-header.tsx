@@ -1,18 +1,20 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { applyLocale, getInitialLocale, getLocaleMessages, localeLabels, locales, localeShortLabels, type Locale } from "@/lib/i18n";
+import { applyLocale, getInitialLocale, withLocale, withoutLocale, getLocaleMessages, localeLabels, locales, localeShortLabels, type Locale } from "@/lib/i18n";
 
 export function SiteHeader() {
-  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const updateDocumentTitle = (nextLocale: Locale) => {
       const messages = getLocaleMessages(nextLocale);
-      const pathname = window.location.pathname;
+      const pathname = withoutLocale(window.location.pathname).replace(/\/$/, "") || "/";
       const currentTitle = document.title.split(" | ")[0];
       const pageLabel = pathname === "/"
         ? ""
@@ -54,7 +56,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link className="site-logo" href="/" aria-label={`Kivotos Railway ${localeLabels[locale]}`}>
+      <Link className="site-logo" href={withLocale("/", locale)} aria-label={`Kivotos Railway ${localeLabels[locale]}`}>
         <Image
           className="site-logo-image"
           src="/icon/kivotosrailway.svg"
@@ -68,7 +70,7 @@ export function SiteHeader() {
         {messages.header.nav.map((label, index) => {
           const href = ["/", "/news", "/railway", "/about", "/members"][index] ?? "/";
           return (
-            <Link key={href} href={href} onClick={() => setMenuOpen(false)}>
+            <Link key={href} href={withLocale(href, locale)} onClick={() => setMenuOpen(false)}>
               {label}
             </Link>
           );

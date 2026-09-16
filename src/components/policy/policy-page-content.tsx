@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouteLocale } from "@/components/layout/locale-context";
+
 import { useEffect, useState } from "react";
 import { getAiTranslationNotice, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 import type { PolicyDocument } from "@/data/policy";
@@ -8,9 +10,9 @@ import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 type PolicyCatalog = Partial<Record<Locale, PolicyDocument>>;
 
 export function PolicyPageContent({ catalog }: { catalog: PolicyCatalog }) {
-  const [locale, setLocale] = useState<Locale>("zh-CN");
-  const document = catalog[locale] ?? catalog["zh-CN"];
-  const isTranslated = locale !== "zh-CN" && Boolean(catalog[locale]);
+  const [locale, setLocale] = useState<Locale>(useRouteLocale());
+  const document = catalog[locale] ?? catalog["zh-Hans"];
+  const isTranslated = locale !== "zh-Hans" && Boolean(catalog[locale]);
   const messages = getLocaleMessages(locale);
 
   useEffect(() => {
