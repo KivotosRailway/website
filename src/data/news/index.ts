@@ -1,7 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
 import { localeContentDirectory, type Locale } from "@/lib/i18n";
-import { markdownToHtml } from "@/lib/markdown";
 import { imageMap } from "@/lib/image-map.generated";
 
 export type NewsItem = {

@@ -27,7 +27,10 @@ function FriendlyLinkCard({ link, locale, visitLabel }: { link: LinkEntry; local
     <>
       <span className="friendly-link-card-content">
         <span className="friendly-link-card-heading">
-          <span className="friendly-link-card-logo"><img src={link.logo} alt="" width={66} height={66} /></span>
+          <span className="friendly-link-card-logo">
+            {/* eslint-disable-next-line @next/next/no-img-element -- Static export has no Image Optimization API. */}
+            <img src={link.logo} alt="" width={66} height={66} />
+          </span>
           <span>{name}</span>
         </span>
         <span className="friendly-link-card-description">{description}</span>

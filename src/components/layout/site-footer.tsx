@@ -21,7 +21,7 @@ function isIcpVisibleHost(hostname: string) {
 
 export function SiteFooter() {
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
-  const [showIcp, setShowIcp] = useState(false);
+  const [showIcp] = useState(() => typeof window !== "undefined" && isIcpVisibleHost(window.location.hostname));
 
   useEffect(() => {
     const syncLocale = (nextLocale: Locale) => setLocale(nextLocale);
@@ -37,7 +37,6 @@ export function SiteFooter() {
     const currentLocale = getInitialLocale();
     syncLocale(currentLocale);
     applyLocale(currentLocale);
-    setShowIcp(isIcpVisibleHost(window.location.hostname));
     window.addEventListener("kr-locale-change", handleLocaleChange);
     window.addEventListener("storage", handleStorage);
 

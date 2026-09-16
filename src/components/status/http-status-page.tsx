@@ -3,7 +3,7 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getInitialLocale, withLocale, type Locale } from "@/lib/i18n";
 
 export type HttpStatusCode = 403 | 404 | 500 | 502 | 503 | 504;
@@ -72,7 +72,6 @@ function parseLocalizedMessages(source: string): Partial<Record<Locale, string[]
 export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [randomMessages, setRandomMessages] = useState<Partial<Record<Locale, string[]>>>({});
-  const [randomMessage, setRandomMessage] = useState<string | null>(null);
 
   useEffect(() => {
     const syncLocale = () => setLocale(getInitialLocale());
@@ -94,10 +93,11 @@ export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
       .catch(() => setRandomMessages({}));
   }, [code]);
 
-  useEffect(() => {
+  const randomMessage = useMemo(() => {
     const messages = randomMessages[locale] ?? randomMessages["zh-Hans"];
-    if (!messages?.length) return;
-    setRandomMessage(messages[Math.floor(Math.random() * messages.length)]);
+    if (!messages?.length) return null;
+    const index = Array.from(`${locale}:${messages.join("|")}`).reduce((total, character) => total + character.codePointAt(0)!, 0) % messages.length;
+    return messages[index];
   }, [locale, randomMessages]);
 
   const returnToPreviousPage = () => {

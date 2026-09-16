@@ -9,12 +9,11 @@ import { getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/
 
 const ITEMS_PER_PAGE = 12;
 
-export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
+export function NewsList({ news }: { news: NewsItem[] }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [currentPage, setCurrentPage] = useState(1);
   const messages = getLocaleMessages(locale);
-  const news = catalog[locale];
 
   useEffect(() => {
     const syncLocale = () => setLocale(getInitialLocale());
@@ -26,10 +25,6 @@ export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
       window.removeEventListener("storage", syncLocale);
     };
   }, []);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeCategory]);
 
   const categories = Array.from(new Set(news.map((item) => item.category).filter(Boolean)));
   const visibleNews = activeCategory
@@ -46,6 +41,11 @@ export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
       setCurrentPage(currentPage - 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
+  };
+
+  const handleCategoryChange = (category: string | null) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
   };
 
   const handleNext = () => {
@@ -67,7 +67,7 @@ export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
           <button
             type="button"
             className={`news-filter-button${activeCategory === null ? " active" : ""}`}
-            onClick={() => setActiveCategory(null)}
+            onClick={() => handleCategoryChange(null)}
           >
             {messages.common.all}
           </button>
@@ -76,7 +76,7 @@ export function NewsList({ catalog }: { catalog: Record<Locale, NewsItem[]> }) {
               key={category}
               type="button"
               className={`news-filter-button${activeCategory === category ? " active" : ""}`}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
             >
               {category}
             </button>
