@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    { "source": "/zh-CN", "destination": "/zh-Hans", "statusCode": 301 },
+    { "source": "/zh-CN/*", "destination": "/zh-Hans/:splat", "statusCode": 301 },
+    { "source": "/zh-cn", "destination": "/zh-Hans", "statusCode": 301 },
+    { "source": "/zh-cn/*", "destination": "/zh-Hans/:splat", "statusCode": 301 },
+    { "source": "/zh-SG", "destination": "/zh-Hans", "statusCode": 301 },
+    { "source": "/zh-SG/*", "destination": "/zh-Hans/:splat", "statusCode": 301 },
+    { "source": "/zh-sg", "destination": "/zh-Hans", "statusCode": 301 },
+    { "source": "/zh-sg/*", "destination": "/zh-Hans/:splat", "statusCode": 301 },
+    { "source": "/zh-TW", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-TW/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/zh-tw", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-tw/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/zh-HK", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-HK/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/zh-hk", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-hk/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/zh-MO", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-MO/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/zh-mo", "destination": "/zh-Hant", "statusCode": 301 },
+    { "source": "/zh-mo/*", "destination": "/zh-Hant/:splat", "statusCode": 301 },
+    { "source": "/ja", "destination": "/jp", "statusCode": 301 },
+    { "source": "/ja/*", "destination": "/jp/:splat", "statusCode": 301 }
+  ]
+}
