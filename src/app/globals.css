@@ -202,6 +202,43 @@ html[data-theme="dark"] .site-footer { color: #afbbc6; background: #0b1016; }
 html[data-theme="dark"] .site-footer-top, html[data-theme="dark"] .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
 html[data-theme="dark"] .site-footer-title, html[data-theme="dark"] .site-footer-column h3, html[data-theme="dark"] .site-footer-column a, html[data-theme="dark"] .site-footer-icon, html[data-theme="dark"] .site-footer-legal-row, html[data-theme="dark"] .site-footer-copyright-row, html[data-theme="dark"] .site-footer-meta p { color: #afbbc6; }
 
+/* The static HTML has no theme attribute. Apply the system theme before React hydrates. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+    --ink: #edf2f7;
+    --blue: #70adff;
+    --paper: #10151d;
+    --soft: #1a222d;
+    --muted: #a9b5c1;
+    --panel: #1a222d;
+  }
+  html:not([data-theme]) .site-header { background: #10151d; }
+  html:not([data-theme]) .site-logo-image, html:not([data-theme]) .site-footer-brand-logo { filter: brightness(0) invert(1); }
+  html:not([data-theme]) .site-locale { background: #1b2531; border-color: rgba(255, 255, 255, 0.12); box-shadow: none; }
+  html:not([data-theme]) .site-locale button { color: #bdc8d5; }
+  html:not([data-theme]) .site-locale button.active { background: #2b3746; color: #dcaee9; box-shadow: none; }
+  html:not([data-theme]) .theme-toggle { border-color: rgba(255, 255, 255, 0.16); }
+  html:not([data-theme]) .theme-toggle button.active { background: #2b3746; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
+  html:not([data-theme]) .theme-toggle button:hover, html:not([data-theme]) .theme-toggle button:focus-visible { background: rgba(255, 255, 255, 0.12); }
+  html:not([data-theme]) .theme-toggle button.active:hover, html:not([data-theme]) .theme-toggle button.active:focus-visible { background: #2b3746; }
+  html:not([data-theme]) .theme-toggle img { filter: brightness(0) invert(1); }
+  html:not([data-theme]) .news-toolbar { border-color: rgba(255, 255, 255, 0.16); }
+  html:not([data-theme]) .news-filter-button, html:not([data-theme]) .news-view-toggle { color: var(--ink); border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.04); }
+  html:not([data-theme]) .news-pagination-button, html:not([data-theme]) .news-share-button { color: var(--ink); border-color: rgba(255, 255, 255, 0.2); background: #1b2531; }
+  html:not([data-theme]) .news-detail-card { background: #19222d; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+  html:not([data-theme]) .news-detail-body, html:not([data-theme]) .policy-body { color: #dce5ee; }
+  html:not([data-theme]) .policy-page { background: var(--paper); }
+  html:not([data-theme]) .policy-card { background: #19222d; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); }
+  html:not([data-theme]) .page-bottom-nav { border-color: #394553; }
+  html:not([data-theme]) .page-breadcrumb, html:not([data-theme]) .page-breadcrumb-separator, html:not([data-theme]) .page-breadcrumb a { color: #cbd5df; }
+  html:not([data-theme]) .news-share { border-color: rgba(255, 255, 255, 0.14); }
+  html:not([data-theme]) .status-code, html:not([data-theme]) .status-content h1 { color: var(--ink); }
+  html:not([data-theme]) .site-footer { color: #afbbc6; background: #0b1016; }
+  html:not([data-theme]) .site-footer-top, html:not([data-theme]) .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
+  html:not([data-theme]) .site-footer-title, html:not([data-theme]) .site-footer-column h3, html:not([data-theme]) .site-footer-column a, html:not([data-theme]) .site-footer-icon, html:not([data-theme]) .site-footer-legal-row, html:not([data-theme]) .site-footer-copyright-row, html:not([data-theme]) .site-footer-meta p { color: #afbbc6; }
+}
+
 @media (max-width: 900px) { 
   .site-header { height: 84px; padding: 0 16px; }
   .site-logo { min-width: 0; flex: 1; justify-content: flex-start; }

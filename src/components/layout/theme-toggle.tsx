@@ -6,9 +6,23 @@ import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 type ThemePreference = "light" | "system" | "dark";
 type ResolvedTheme = "light" | "dark";
+const themeCookieName = "kr-theme";
+
+function getThemeCookie(): ThemePreference | null {
+  const value = document.cookie
+    .split(";")
+    .map((entry) => entry.trim())
+    .find((entry) => entry.startsWith(`${themeCookieName}=`))
+    ?.slice(themeCookieName.length + 1);
+
+  return value === "light" || value === "system" || value === "dark" ? value : null;
+}
 
 function getInitialThemePreference(): ThemePreference {
   if (typeof window === "undefined") return "system";
+
+  const cookieTheme = getThemeCookie();
+  if (cookieTheme) return cookieTheme;
 
   const savedTheme = window.localStorage.getItem("kr-theme");
   return savedTheme === "light" || savedTheme === "system" || savedTheme === "dark" ? savedTheme : "system";
@@ -24,6 +38,7 @@ function applyTheme(preference: ThemePreference) {
   document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = theme;
   window.localStorage.setItem("kr-theme", preference);
+  document.cookie = `${themeCookieName}=${preference}; Path=/; Max-Age=31536000; SameSite=Lax`;
 }
 
 export function ThemeToggle() {
