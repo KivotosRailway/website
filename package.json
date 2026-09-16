@@ -2,9 +2,9 @@
   "name": "kivotosrailway-website-v2",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@10.24.0",
   "engines": {
-    "node": ">=22.13.0 <23"
+    "node": ">=22.11.0 <23"
   },
   "scripts": {
     "dev": "next dev",
