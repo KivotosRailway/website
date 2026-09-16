@@ -55,7 +55,7 @@ a { color: inherit; text-decoration: none; }
 .home-collage { position: relative; height: 648px; margin-top: 50px; }.home-collage-tile { position: absolute; border-radius: 13px; background: #d9d9d9; }.home-collage-wide { top: 0; left: 0; width: 41.4%; height: 359px; }.home-collage-medium { top: 0; left: 42.57%; width: 28.87%; height: 359px; }.home-collage-small { top: 376px; left: 27.28%; width: 44.3%; height: 272px; }.home-collage-bottom { top: 376px; left: 0; width: 25.83%; height: 272px; }.home-collage-tall { top: 0; right: 0; width: 27.1%; height: 648px; }
 
 .news-page { padding: 30px 0 60px; }
-.friendly-links-hero { background: var(--policy-hero-image) center 26.71% / 100% auto no-repeat; }
+.friendly-links-hero { background: var(--policy-hero-image) center 28.2% / 100% auto no-repeat; }
 .friendly-links-page-inner { gap: 50px; }
 .friendly-links-content { width: min(1214px, 100%); margin: 0 auto; }
 .friendly-links-section + .friendly-links-section { margin-top: 50px; }
@@ -65,7 +65,8 @@ a { color: inherit; text-decoration: none; }
 a.friendly-link-card:hover, a.friendly-link-card:focus-visible { border-color: #8f56a2; box-shadow: 0 8px 20px rgba(40, 29, 47, .1); transform: translateY(-2px); }
 .friendly-link-card-content { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 16.42px; padding: 32.83px 10.94px; }
 .friendly-link-card-heading { display: flex; align-items: center; justify-content: center; gap: 16px; min-width: 0; font-size: 27.36px; font-weight: 400; line-height: normal; white-space: nowrap; }
-.friendly-link-card-heading img { width: 65.67px; height: 65.67px; overflow: hidden; border-radius: 8px; object-fit: cover; }
+.friendly-link-card-logo { display: flex; width: 65.67px; height: 65.67px; flex: 0 0 65.67px; align-items: center; justify-content: center; overflow: hidden; border-radius: 10.944px; background: #fff; }
+.friendly-link-card-logo img { display: block; width: 65.67px; height: 65.67px; object-fit: cover; }
 .friendly-link-card-description { color: #8d949a; font-size: 16.42px; line-height: 21.89px; text-align: center; }
 .friendly-link-card-archive { position: absolute; top: 13px; right: 5px; padding: 4px 6px; border-radius: 4px; background: #e72329; color: #fff; font-size: 10px; line-height: 12px; }
 .friendly-links-page .page-bottom-nav { margin-top: 176px; }
