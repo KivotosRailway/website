@@ -8,10 +8,10 @@ type ThemePreference = "light" | "system" | "dark";
 type ResolvedTheme = "light" | "dark";
 
 function getInitialThemePreference(): ThemePreference {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") return "system";
 
   const savedTheme = window.localStorage.getItem("kr-theme");
-  return savedTheme === "light" || savedTheme === "system" || savedTheme === "dark" ? savedTheme : "light";
+  return savedTheme === "light" || savedTheme === "system" || savedTheme === "dark" ? savedTheme : "system";
 }
 
 function resolveTheme(preference: ThemePreference): ResolvedTheme {
@@ -27,7 +27,7 @@ function applyTheme(preference: ThemePreference) {
 }
 
 export function ThemeToggle() {
-  const [themePreference, setThemePreference] = useState<ThemePreference>("light");
+  const [themePreference, setThemePreference] = useState<ThemePreference>("system");
   const [locale, setLocale] = useState<Locale>("zh-CN");
 
   useEffect(() => {
