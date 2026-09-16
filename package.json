@@ -27,6 +27,6 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest",
-    "wrangler": "4.132.0"
+    "wrangler": "4.131.1"
   }
 }
