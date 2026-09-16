@@ -24,7 +24,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
-      <body><SiteHeader />{children}<SiteFooter /></body>
+      <body>
+        <SiteHeader />{children}<SiteFooter />
+      </body>
     </html>
   );
 }

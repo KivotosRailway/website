@@ -23,7 +23,11 @@
     "all": "全部",
     "listView": "列表視圖",
     "pagePosition": "頁面位置",
-    "backToNews": "返回新聞列表"
+    "backToNews": "返回新聞列表",
+    "theme": "主題",
+    "useDarkTheme": "切換至深色模式",
+    "useLightTheme": "切換至淺色模式",
+    "useSystemTheme": "跟隨系統主題"
   },
   "footer": {
     "follow": "關注我們",

@@ -23,7 +23,11 @@
     "all": "すべて",
     "listView": "リスト表示",
     "pagePosition": "ページの位置",
-    "backToNews": "ニュース一覧へ戻る"
+    "backToNews": "ニュース一覧へ戻る",
+    "theme": "テーマ",
+    "useDarkTheme": "ダークモードに切り替える",
+    "useLightTheme": "ライトモードに切り替える",
+    "useSystemTheme": "システム設定に従う"
   },
   "footer": {
     "follow": "フォローする",

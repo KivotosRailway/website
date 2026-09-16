@@ -23,7 +23,11 @@
     "all": "All",
     "listView": "List view",
     "pagePosition": "Page position",
-    "backToNews": "Back to news list"
+    "backToNews": "Back to news list",
+    "theme": "Theme",
+    "useDarkTheme": "Switch to dark mode",
+    "useLightTheme": "Switch to light mode",
+    "useSystemTheme": "Use system theme"
   },
   "footer": {
     "follow": "Follow us",

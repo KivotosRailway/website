@@ -1,0 +1,21 @@
+# Random 404 messages grouped by locale.
+zh-CN:
+  - 人与人的悲欢不尽相同
+  - 此处没有列车经过
+  - 这条线路还没有开通
+  - 你抵达了地图之外的地方
+zh-TW:
+  - 人與人的悲歡並不相同
+  - 此處沒有列車經過
+  - 這條路線尚未通車
+  - 你抵達了地圖之外的地方
+en:
+  - We do not all share the same joys and sorrows
+  - No train stops here
+  - This line has not opened yet
+  - You have reached the edge of the map
+ja:
+  - 人それぞれ、喜びも悲しみも違う
+  - ここを通る列車はありません
+  - この路線はまだ開通していません
+  - 地図の外まで来てしまいました

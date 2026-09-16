@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { applyLocale, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const footerColumnHrefs = [
   ["/policy/user-agreement", "/policy/privacy-policy", "/policy/disclaimer", "/policy/resource-pack"],
@@ -66,6 +67,7 @@ export function SiteFooter() {
               ))}
             </div>
           </div>
+          <ThemeToggle />
         </div>
 
         <div className="site-footer-main">
