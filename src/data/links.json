@@ -1,0 +1,25 @@
+{
+  "sections": [
+    {
+      "id": "services",
+      "title": { "zh-Hans": "服务提供", "zh-Hant": "服務提供", "en": "Service providers", "jp": "サービス提供" },
+      "links": [
+        { "name": "德威云", "description": "Minecraft 服务器提供方", "logo": "/links/fetarute.png", "url": "https://www.deviy.cn/" },
+        { "name": "腾讯云", "description": "CDN、对象存储 提供方", "logo": "/links/fetarute.png", "url": "https://cloud.tencent.com/" },
+        { "name": "蓝色秋生", "description": "网页服务提供方，对象存储、CDN 维护方", "logo": "/links/blueakio.svg", "url": "https://www.blueakio.com/" }
+      ]
+    },
+    {
+      "id": "friends",
+      "title": { "zh-Hans": "朋友们", "zh-Hant": "朋友們", "en": "Friends", "jp": "友だち" },
+      "links": [
+        { "name": "德威云", "description": "Minecraft 服务器提供方", "logo": "/links/fetarute.png", "url": "https://deviy.cn/" },
+        { "name": "腾讯云", "description": "CDN、对象存储 提供方", "logo": "/links/fetarute.png", "url": "https://cloud.tencent.com/" },
+        { "name": "腾讯云", "description": "CDN、对象存储 提供方", "logo": "/links/fetarute.png", "url": "https://cloud.tencent.com/" },
+        { "name": "蓝色秋生", "description": "网页服务提供方，对象存储、CDN 维护方", "logo": "/links/fetarute.png", "url": "https://liqiusheng.cn/" },
+        { "name": "腾讯云", "description": "CDN、对象存储 提供方", "logo": "/links/fetarute.png", "url": "https://cloud.tencent.com/" },
+        { "name": "腾讯云", "description": "CDN、对象存储 提供方", "logo": "/links/fetarute.png", "url": "https://cloud.tencent.com/" }
+      ]
+    }
+  ]
+}
