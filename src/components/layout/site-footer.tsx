@@ -3,7 +3,7 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { applyLocale, getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
@@ -19,9 +19,13 @@ function isIcpVisibleHost(hostname: string) {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]" || hostname.endsWith(".kivotos.cc");
 }
 
+const subscribeToHost = () => () => {};
+const getIcpVisibility = () => typeof window !== "undefined" && isIcpVisibleHost(window.location.hostname);
+const getServerIcpVisibility = () => false;
+
 export function SiteFooter() {
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
-  const [showIcp] = useState(() => typeof window !== "undefined" && isIcpVisibleHost(window.location.hostname));
+  const showIcp = useSyncExternalStore(subscribeToHost, getIcpVisibility, getServerIcpVisibility);
 
   useEffect(() => {
     const syncLocale = (nextLocale: Locale) => setLocale(nextLocale);
