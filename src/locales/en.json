@@ -1,6 +1,6 @@
 {
   "header": {
-    "nav": ["Home", "News", "Railway", "About", "Members"],
+    "nav": ["Home", "News", "Railway", "City", "About"],
     "locale": "EN"
   },
   "home": {

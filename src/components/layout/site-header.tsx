@@ -68,7 +68,7 @@ export function SiteHeader() {
       </Link>
       <nav className={`site-navigation${menuOpen ? " is-open" : ""}`} aria-label={localeLabels[locale]}>
         {messages.header.nav.map((label, index) => {
-          const href = ["/", "/news", "/railway", "/about", "/members"][index] ?? "/";
+          const href = ["/", "/news", "/railway", "/city", "/about"][index] ?? "/";
           return (
             <Link key={href} href={withLocale(href, locale)} onClick={() => setMenuOpen(false)}>
               {label}
