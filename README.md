@@ -1,25 +1,42 @@
-# KivotosRailway 第二代官网
+# KivotosRailway Website
 
-正在~~用AI~~创作
+KivotosRailway 的官方网站。本站提供新闻、政策与免责声明、友情链接和错误页面，并支持简体中文、繁體中文、English、日本語。
 
-## 本地最新资讯说明
+## 技术栈
 
-首页已改为纯本地数据展示，当前显示最近 3 条资讯，内容直接维护在前端页面中，便于快速迭代与本地调试。
+- Next.js 16
+- React 19 与 TypeScript
+- pnpm
+- EdgeOne 静态部署
 
-### 1. 数据位置
+## 本地运行
 
-首页资讯内容位于：
+建议使用 Node.js 22.11.0 与 pnpm 10.24.0。
 
-- `src/app/page.tsx`
+```bash
+corepack pnpm install --frozen-lockfile
+corepack pnpm dev
+```
 
-### 2. 展示规则
+## 常用命令
 
-当前首页只展示最新 3 条：
+```bash
+corepack pnpm lint          # 检查代码
+corepack pnpm build         # 构建静态站点到 out/
+corepack pnpm cache-images  # 缓存新闻中的远程图片
+corepack pnpm deploy        # 使用 Wrangler 部署
+```
 
-- 标题区
-- 3 个资讯卡片
-- 图片 + 标题 + 日期
+## 目录概览
 
-### 3. 后续扩展
+```text
+src/app/           页面和路由
+src/components/    页面组件与站点布局
+src/data/news/     新闻 Markdown 内容
+src/data/policy/   政策与声明内容
+src/data/links.json 友情链接数据
+src/locales/       UI 文案翻译
+public/            图片、图标与其他静态资源
+```
 
-如果后续需要从其他来源更新内容，可以直接在该数组中补充数据，或替换成新的数据源实现，但当前版本不再依赖 Hexo。
+公开语言路径为 `/zh-Hans/`、`/zh-Hant/`、`/en/` 和 `/jp/`。例如：`/zh-Hans/news/`、`/en/links/`。
