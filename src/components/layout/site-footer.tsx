@@ -15,6 +15,12 @@ const footerColumnHrefs = [
 
 const footerLegalHrefs = ["https://wiki.kivotosrailway.com", "https://url.kivotos.cc/status", "/links"] as const;
 
+const socialLinks = [
+  { label: "Bilibili", icon: "/icon/social/bilibili.svg", width: 28, height: 25, href: "https://space.bilibili.com/14823193" },
+  { label: "X", icon: "/icon/social/x.svg", width: 27, height: 28, href: "https://x.com/kivotosrailway" },
+  { label: "Xiaohongshu", icon: "/icon/social/xiaohongshu.svg", width: 28, height: 10, href: "https://www.xiaohongshu.com/user/profile/655396cf0000000008003eea" },
+] as const;
+
 function isIcpVisibleHost(hostname: string) {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]" || hostname.endsWith(".kivotos.cc");
 }
@@ -59,15 +65,9 @@ export function SiteFooter() {
           <div className="site-footer-socials" aria-label="socials">
             <span className="site-footer-title">{messages.footer.follow}</span>
             <div className="site-footer-icons">
-              {messages.footer.social.map((item, index) => (
-                <a key={`social-${index}`} href="#" aria-label={item} className="site-footer-icon" title={item}>
-                  {[
-                    "◌",
-                    "◍",
-                    "X",
-                    "in",
-                    "▶",
-                  ][index] ?? "•"}
+              {socialLinks.map((social) => (
+                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} className="site-footer-icon" title={social.label}>
+                  <Image src={social.icon} alt="" width={social.width} height={social.height} />
                 </a>
               ))}
             </div>

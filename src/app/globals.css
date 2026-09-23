@@ -165,8 +165,9 @@ a.friendly-link-card:hover, a.friendly-link-card:focus-visible { border-color: #
 .site-footer-socials { display: flex; align-items: center; justify-content: flex-start; gap: 33px; height: 28px; }
 .site-footer-title { width: 80px; font-family: "Noto Sans SC", sans-serif; font-size: 20px; font-weight: 400; line-height: 21px; letter-spacing: 0; color: #5f6464; }
 .site-footer-icons { display: flex; align-items: center; gap: 28px; }
-.site-footer-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 4px; background: transparent; color: #5e686d; font-size: 14px; font-weight: 700; transition: transform .2s ease, color .2s ease; }
-.site-footer-icon:hover { color: #1f2b38; transform: translateY(-1px); }
+.site-footer-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 4px; background: transparent; transition: transform .2s ease, opacity .2s ease; }
+.site-footer-icon img { display: block; max-width: 28px; max-height: 28px; object-fit: contain; }
+.site-footer-icon:hover, .site-footer-icon:focus-visible { opacity: .72; transform: translateY(-1px); }
 .site-footer-main { position: relative; height: 234px; padding-top: 21px; }
 .site-footer-columns { display: grid; grid-template-columns: 216px 216px 298px; gap: 0; width: 730px; height: 207px; }
 .site-footer-column h3 { margin: 0; font-family: "Noto Sans SC", sans-serif; font-size: 20px; font-weight: 400; line-height: 21px; color: #5f6464; }
@@ -222,6 +223,7 @@ html[data-theme="dark"] .status-code, html[data-theme="dark"] .status-content h1
 html[data-theme="dark"] .site-footer { color: #afbbc6; background: #0b1016; }
 html[data-theme="dark"] .site-footer-top, html[data-theme="dark"] .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
 html[data-theme="dark"] .site-footer-title, html[data-theme="dark"] .site-footer-column h3, html[data-theme="dark"] .site-footer-column a, html[data-theme="dark"] .site-footer-icon, html[data-theme="dark"] .site-footer-legal-row, html[data-theme="dark"] .site-footer-copyright-row, html[data-theme="dark"] .site-footer-meta p { color: #afbbc6; }
+html[data-theme="dark"] .site-footer-icon img { filter: brightness(0) invert(1); opacity: .78; }
 
 /* The static HTML has no theme attribute. Apply the system theme before React hydrates. */
 @media (prefers-color-scheme: dark) {
@@ -261,6 +263,7 @@ html[data-theme="dark"] .site-footer-title, html[data-theme="dark"] .site-footer
   html:not([data-theme]) .site-footer { color: #afbbc6; background: #0b1016; }
   html:not([data-theme]) .site-footer-top, html:not([data-theme]) .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
   html:not([data-theme]) .site-footer-title, html:not([data-theme]) .site-footer-column h3, html:not([data-theme]) .site-footer-column a, html:not([data-theme]) .site-footer-icon, html:not([data-theme]) .site-footer-legal-row, html:not([data-theme]) .site-footer-copyright-row, html:not([data-theme]) .site-footer-meta p { color: #afbbc6; }
+  html:not([data-theme]) .site-footer-icon img { filter: brightness(0) invert(1); opacity: .78; }
 }
 
 @media (max-width: 900px) { 
