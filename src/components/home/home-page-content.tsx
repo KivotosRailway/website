@@ -133,8 +133,8 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
         label={t.common.siteTitle}
         className="home-actions"
         items={[
-          { href: "/about", image: "/home/about-card.png", label: t.footer.columns[1].title },
-          { href: "/join-us", image: "/home/join-card.png", label: t.footer.columns[1].links[2] },
+          { href: "/about", image: "/home/about-card.webp", label: t.footer.columns[1].title },
+          { href: "/join-us", image: "/pages/join-hero.webp", label: t.footer.columns[1].links[2] },
         ]}
       />
     </main>

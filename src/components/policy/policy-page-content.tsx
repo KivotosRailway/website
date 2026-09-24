@@ -32,7 +32,7 @@ export function PolicyPageContent({ catalog }: { catalog: PolicyCatalog }) {
   return (
     <>
       <main className="title-page policy-page">
-        <PageTitleHero title={document.title} image="/policy-hero.png" />
+        <PageTitleHero title={document.title} image="/policy-hero.webp" />
         <article className="policy-card">
           {isTranslated && (
             <div className="news-detail-ai-banner" aria-label="AI translated content">

@@ -53,7 +53,7 @@ export function FriendlyLinksPage({ locale }: { locale: Locale }) {
   return (
     <>
       <main className="title-page friendly-links-page">
-        <PageTitleHero title={messages.footer.legal[2]} image="/links/friendly-links-hero.png" imagePosition="center 28.2%" />
+        <PageTitleHero title={messages.footer.legal[2]} image="/links/friendly-links-hero.webp" imagePosition="center 28.2%" />
         <div className="friendly-links-content">
           {linkSections.map((section) => (
             <section className="friendly-links-section" key={section.id} aria-labelledby={`friendly-links-${section.id}`}>

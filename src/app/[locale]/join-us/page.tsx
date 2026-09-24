@@ -12,5 +12,5 @@ export default async function JoinUsPage({ params }: { params: Promise<{ locale:
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const messages = getLocaleMessages(locale);
-  return <SimpleTitlePage locale={locale} title={messages.footer.columns[1].links[2]} image="/pages/join-hero.png" imagePosition="center" />;
+  return <SimpleTitlePage locale={locale} title={messages.footer.columns[1].links[2]} image="/pages/join-hero.webp" imagePosition="center" />;
 }

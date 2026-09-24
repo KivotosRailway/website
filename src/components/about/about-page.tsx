@@ -18,7 +18,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
   return (
     <>
       <main className="title-page about-page">
-        <PageTitleHero title={title} image="/pages/about-hero.png" imagePosition="center 52%" />
+        <PageTitleHero title={title} image="/pages/about-hero.webp" imagePosition="center 52%" />
 
         <section className="about-introduction" aria-labelledby="about-introduction-title">
           <div className="about-introduction-copy">
@@ -33,8 +33,8 @@ export function AboutPage({ locale }: { locale: Locale }) {
           label={messages.footer.columns[1].title}
           className="about-action-cards"
           items={[
-            { href: "/members", image: "/home/about-card.png", label: messages.footer.columns[1].links[1] },
-            { href: "/join-us", image: "/home/join-card.png", label: messages.footer.columns[1].links[2] },
+            { href: "/members", image: "/home/about-card.webp", label: messages.footer.columns[1].links[1] },
+            { href: "/join-us", image: "/pages/join-hero.webp", label: messages.footer.columns[1].links[2] },
           ]}
         />
       </main>

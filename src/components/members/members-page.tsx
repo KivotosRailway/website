@@ -47,7 +47,7 @@ export function MembersPage({ locale }: { locale: Locale }) {
   return (
     <>
       <main className="title-page members-page">
-        <PageTitleHero title={pageTitle} image="/members/members-hero.png" imagePosition="center 47%" />
+        <PageTitleHero title={pageTitle} image="/members/members-hero.webp" imagePosition="center 47%" />
         <div className="members-sections">
           {memberData.sections.map((section) => (
             <section className="member-section" key={section.id} aria-labelledby={`members-${section.id}`}>

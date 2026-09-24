@@ -11,5 +11,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function CityPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <SimpleTitlePage locale={locale} title={getLocaleMessages(locale).header.nav[3]} image="/city/city-hero.png" imagePosition="47% 24%" />;
+  return <SimpleTitlePage locale={locale} title={getLocaleMessages(locale).header.nav[3]} image="/city/city-hero.webp" imagePosition="47% 24%" />;
 }
