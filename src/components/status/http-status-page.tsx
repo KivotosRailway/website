@@ -3,6 +3,7 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { getInitialLocale, withLocale, type Locale } from "@/lib/i18n";
 
@@ -72,6 +73,7 @@ function parseLocalizedMessages(source: string): Partial<Record<Locale, string[]
 export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [randomMessages, setRandomMessages] = useState<Partial<Record<Locale, string[]>>>({});
+  const router = useRouter();
 
   useEffect(() => {
     const syncLocale = () => setLocale(getInitialLocale());
@@ -105,7 +107,7 @@ export function HttpStatusPage({ code }: { code: HttpStatusCode }) {
       window.history.back();
       return;
     }
-    window.location.assign(withLocale("/", locale));
+    router.replace(withLocale("/", locale));
   };
 
   return (

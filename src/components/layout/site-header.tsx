@@ -4,12 +4,23 @@ import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { applyLocale, getInitialLocale, withLocale, withoutLocale, getLocaleMessages, localeLabels, locales, localeShortLabels, type Locale } from "@/lib/i18n";
 
 export function SiteHeader() {
-  const [locale, setLocale] = useState<Locale>(useRouteLocale());
+  const locale = useRouteLocale();
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const changeLocale = (nextLocale: Locale) => {
+    try {
+      window.localStorage.setItem("kr-locale", nextLocale);
+    } catch { /* The URL remains the source of truth when storage is unavailable. */ }
+
+    const href = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    router.replace(withLocale(href, nextLocale));
+  };
 
   useEffect(() => {
     const updateDocumentTitle = (nextLocale: Locale) => {
@@ -25,10 +36,7 @@ export function SiteHeader() {
       document.title = pageLabel ? `${pageLabel} | ${messages.common.siteTitle}` : messages.common.siteTitle;
     };
 
-    const syncLocale = (nextLocale: Locale) => {
-      setLocale(nextLocale);
-      updateDocumentTitle(nextLocale);
-    };
+    const syncLocale = (nextLocale: Locale) => updateDocumentTitle(nextLocale);
 
     const handleLocaleChange = (event: Event) => {
       const nextLocale = (event as CustomEvent<{ locale?: Locale }>).detail?.locale ?? getInitialLocale();
@@ -83,8 +91,7 @@ export function SiteHeader() {
               className={item === locale ? "active" : ""}
               aria-pressed={item === locale}
               onClick={() => {
-                setLocale(item);
-                applyLocale(item);
+                changeLocale(item);
               }}
               aria-label={localeLabels[item]}
               title={localeLabels[item]}
@@ -103,8 +110,7 @@ export function SiteHeader() {
               className={item === locale ? "active" : ""}
               aria-pressed={item === locale}
               onClick={() => {
-                setLocale(item);
-                applyLocale(item);
+                changeLocale(item);
               }}
               aria-label={localeLabels[item]}
               title={localeLabels[item]}

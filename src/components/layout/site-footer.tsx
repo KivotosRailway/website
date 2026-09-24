@@ -3,6 +3,7 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { applyLocale, getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
@@ -81,9 +82,12 @@ export function SiteFooter() {
               <div key={`column-${groupIndex}`} className="site-footer-column">
                 <h3>{group.title}</h3>
                 <ul>
-                  {group.links.map((link, linkIndex) => (
-                    <li key={`column-${groupIndex}-link-${linkIndex}`}><a href={withLocale(footerColumnHrefs[groupIndex][linkIndex], locale)}>{link}</a></li>
-                  ))}
+                  {group.links.map((link, linkIndex) => {
+                    const href = withLocale(footerColumnHrefs[groupIndex][linkIndex], locale);
+                    return <li key={`column-${groupIndex}-link-${linkIndex}`}>
+                      {href.startsWith("/") ? <Link href={href}>{link}</Link> : <a href={href}>{link}</a>}
+                    </li>;
+                  })}
                 </ul>
               </div>
             ))}
@@ -104,9 +108,12 @@ export function SiteFooter() {
 
         <div className="site-footer-meta">
           <div className="site-footer-legal-row">
-            {messages.footer.legal.map((item, itemIndex) => (
-              <a key={`legal-${itemIndex}`} href={withLocale(footerLegalHrefs[itemIndex], locale)}>{item}</a>
-            ))}
+            {messages.footer.legal.map((item, itemIndex) => {
+              const href = withLocale(footerLegalHrefs[itemIndex], locale);
+              return href.startsWith("/")
+                ? <Link key={`legal-${itemIndex}`} href={href}>{item}</Link>
+                : <a key={`legal-${itemIndex}`} href={href}>{item}</a>;
+            })}
           </div>
           <p className="site-footer-description">{messages.footer.description}</p>
           <div className="site-footer-copyright-row">
