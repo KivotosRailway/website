@@ -54,6 +54,23 @@
               "jp": "主要ネットワークメンテナー"
             }
           }
+        },
+        {
+          "name": "yiranxiaoxiong",
+          "role": "资源包制作者",
+          "avatar": "/icon/avatar/yiranxiaoxiong.jpg",
+          "url": "https://space.bilibili.com/1754428275",
+          "i18n": {
+            "name": {
+              "en": "yiranxiaoxiong",
+              "jp": "yiranxiaoxiong"
+            },
+            "role": {
+              "zh-Hant": "資源包製作者",
+              "en": "Resource pack creator",
+              "jp": "リソースパック制作者"
+            }
+          }
         }
       ]
     },
