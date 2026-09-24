@@ -1,0 +1,71 @@
+{
+  "title": {
+    "zh-Hans": "成员一览",
+    "zh-Hant": "成員一覽",
+    "en": "Members",
+    "jp": "メンバー"
+  },
+  "empty": {
+    "zh-Hans": "成员资料正在整理中。",
+    "zh-Hant": "成員資料正在整理中。",
+    "en": "Member profiles are being prepared.",
+    "jp": "メンバー情報は現在準備中です。"
+  },
+  "sections": [
+    {
+      "id": "leadership",
+      "title": {
+        "zh-Hans": "领导团队",
+        "zh-Hant": "領導團隊",
+        "en": "Leadership",
+        "jp": "運営チーム"
+      },
+      "members": [
+        {
+          "name": "IF-Chan",
+          "role": "服主&主要出资者",
+          "avatar": "/icon/avatar/if-chan.png",
+          "url": "https://if-chan.mika.vin/",
+          "i18n": {
+            "name": {
+              "en": "IF-Chan",
+              "jp": "IF-Chan"
+            },
+            "role": {
+              "zh-Hant": "服主&主要出資者",
+              "en": "Server Owner & Main Investor",
+              "jp": "サーバーオーナー&主要投資家"
+            }
+          }
+        },
+        {
+          "name": "MisakaAkio",
+          "role": "主要网络维护者",
+          "avatar": "https://webstatic.blueakio.com/dynamic/user/NiuBoss123.jpg",
+          "url": "https://www.akio.top/",
+          "i18n": {
+            "name": {
+              "en": "MisakaAkio",
+              "jp": "MisakaAkio"
+            },
+            "role": {
+              "zh-Hant": "主要網絡維護者",
+              "en": "Main Network Maintainer",
+              "jp": "主要ネットワークメンテナー"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "members",
+      "title": {
+        "zh-Hans": "主要玩家",
+        "zh-Hant": "主要玩家",
+        "en": "Members",
+        "jp": "メンバー"
+      },
+      "members": []
+    }
+  ]
+}

@@ -63,6 +63,7 @@ a { color: inherit; text-decoration: none; }
 .friendly-links-content { width: min(1214px, 100%); margin: 0 auto; }
 .friendly-links-section + .friendly-links-section { margin-top: 50px; }
 .friendly-links-section h2 { margin: 0 0 20px; color: #181c20; font-size: 40px; font-weight: 700; line-height: 48px; }
+.friendly-links-section h2::after { display: block; width: 28.875px; height: 5.25px; margin-top: 17.5px; background: #8f56a2; content: ""; }
 .friendly-links-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .friendly-link-card { position: relative; display: flex; align-items: stretch; min-width: 0; min-height: 186px; overflow: hidden; border: 1.1px solid #e3e6e8; border-radius: 16.42px; background: #fff; color: #181c20; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 a.friendly-link-card:hover, a.friendly-link-card:focus-visible { border-color: #8f56a2; box-shadow: 0 8px 20px rgba(40, 29, 47, .1); transform: translateY(-2px); }
@@ -73,6 +74,24 @@ a.friendly-link-card:hover, a.friendly-link-card:focus-visible { border-color: #
 .friendly-link-card-description { color: #8d949a; font-size: 16.42px; line-height: 21.89px; text-align: center; }
 .friendly-link-card-archive { position: absolute; top: 13px; right: 5px; padding: 4px 6px; border-radius: 4px; background: #e72329; color: #fff; font-size: 10px; line-height: 12px; }
 .friendly-links-page .page-bottom-nav { margin-top: 176px; }
+.members-page-inner { gap: 50px; }
+.members-hero { background: var(--policy-hero-image) center 47% / 100% auto no-repeat; }
+.members-sections { width: min(1200px, 100%); }
+.member-section + .member-section { margin-top: 46px; }
+.member-section-heading { margin: 0 0 20px; }
+.member-section-heading h2 { margin: 0; color: #202326; font-size: 30px; font-weight: 700; line-height: 1.35; letter-spacing: -.03em; }
+.member-section-heading span { display: block; width: 28px; height: 5px; margin-top: 12px; background: #8f56a2; }
+.member-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; }
+.member-card { display: block; min-width: 0; color: #202326; }
+a.member-card { transition: opacity .2s ease, transform .2s ease; }
+a.member-card:hover, a.member-card:focus-visible { opacity: .82; transform: translateY(-2px); }
+.member-card-avatar { display: flex; aspect-ratio: 1; align-items: center; justify-content: center; overflow: hidden; border-radius: 4px; background: #d9d9d9; color: #8f56a2; font-size: 72px; font-weight: 700; }
+.member-card-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.member-card-copy { padding-top: 12px; }
+.member-card-copy h3 { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.4; letter-spacing: -.03em; }
+.member-card-copy p { margin: 4px 0 0; color: #5f6464; font-size: 14px; line-height: 1.45; }
+.member-empty { margin: 0; padding: 40px 0; color: #697684; font-size: 16px; }
+.members-page .page-bottom-nav { margin-top: 80px; }
 .news-page-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .news-page-header { display: flex; justify-content: center; align-items: center; margin: 0 0 30px; }
 .news-page-header h1 { margin: 0; font-size: clamp(52px, 5vw, 88px); letter-spacing: -0.07em; line-height: 1; font-weight: 800; }
@@ -224,6 +243,9 @@ html[data-theme="dark"] .site-footer { color: #afbbc6; background: #0b1016; }
 html[data-theme="dark"] .site-footer-top, html[data-theme="dark"] .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
 html[data-theme="dark"] .site-footer-title, html[data-theme="dark"] .site-footer-column h3, html[data-theme="dark"] .site-footer-column a, html[data-theme="dark"] .site-footer-icon, html[data-theme="dark"] .site-footer-legal-row, html[data-theme="dark"] .site-footer-copyright-row, html[data-theme="dark"] .site-footer-meta p { color: #afbbc6; }
 html[data-theme="dark"] .site-footer-icon img { filter: brightness(0) invert(1); opacity: .78; }
+html[data-theme="dark"] .member-section-heading h2, html[data-theme="dark"] .member-card { color: var(--ink); }
+html[data-theme="dark"] .member-card-avatar { background: #263240; }
+html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-empty { color: #afbbc6; }
 
 /* The static HTML has no theme attribute. Apply the system theme before React hydrates. */
 @media (prefers-color-scheme: dark) {
@@ -264,6 +286,9 @@ html[data-theme="dark"] .site-footer-icon img { filter: brightness(0) invert(1);
   html:not([data-theme]) .site-footer-top, html:not([data-theme]) .site-footer-meta { border-color: rgba(255, 255, 255, 0.1); }
   html:not([data-theme]) .site-footer-title, html:not([data-theme]) .site-footer-column h3, html:not([data-theme]) .site-footer-column a, html:not([data-theme]) .site-footer-icon, html:not([data-theme]) .site-footer-legal-row, html:not([data-theme]) .site-footer-copyright-row, html:not([data-theme]) .site-footer-meta p { color: #afbbc6; }
   html:not([data-theme]) .site-footer-icon img { filter: brightness(0) invert(1); opacity: .78; }
+  html:not([data-theme]) .member-section-heading h2, html:not([data-theme]) .member-card { color: var(--ink); }
+  html:not([data-theme]) .member-card-avatar { background: #263240; }
+  html:not([data-theme]) .member-card-copy p, html:not([data-theme]) .member-empty { color: #afbbc6; }
 }
 
 @media (max-width: 900px) { 
@@ -332,6 +357,7 @@ html[data-theme="dark"] .site-footer-icon img { filter: brightness(0) invert(1);
   .site-footer-brand-wrap { display: none; }
   .site-footer-socials { flex-direction: row; align-items: center; }
   .site-footer-top { align-items: center; }
+  .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
   .site-footer-legal-row { gap: 8px 12px; }
   .site-footer { height: auto; padding: 28px 0 22px; }
   .site-footer-meta p { font-size: 12px; }
@@ -423,6 +449,8 @@ html[data-theme="dark"] .site-footer-icon img { filter: brightness(0) invert(1);
   .site-footer-socials { gap: 18px; }
   .site-footer-title { width: auto; font-size: 18px; }
   .site-footer-icons { gap: 14px; }
+  .member-section-heading h2 { font-size: 26px; }
+  .member-grid { grid-template-columns: 1fr; gap: 24px; }
   .site-footer-main { padding-top: 22px; }
   .site-footer-columns { gap: 18px; }
   .site-footer-column h3 { font-size: 18px; }
