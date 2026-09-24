@@ -249,6 +249,11 @@ html[data-theme="dark"] .site-logo-image, html[data-theme="dark"] .site-footer-b
 html[data-theme="dark"] .site-locale { background: #1b2531; border-color: rgba(255, 255, 255, 0.12); box-shadow: none; }
 html[data-theme="dark"] .site-locale button { color: #bdc8d5; }
 html[data-theme="dark"] .site-locale button.active { background: #2b3746; color: #dcaee9; box-shadow: none; }
+html[data-theme="dark"] .site-navigation.is-open { border-color: rgba(255, 255, 255, 0.12); background: #1a222d; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28); }
+html[data-theme="dark"] .site-navigation.is-open a { border-color: rgba(255, 255, 255, 0.1); color: var(--ink); }
+html[data-theme="dark"] .site-navigation.is-open .site-mobile-locale { border-color: rgba(255, 255, 255, 0.1); }
+html[data-theme="dark"] .site-mobile-locale button { color: #bdc8d5; }
+html[data-theme="dark"] .site-mobile-locale button:hover, html[data-theme="dark"] .site-mobile-locale button:focus-visible, html[data-theme="dark"] .site-mobile-locale button.active { background: #2b3746; color: #dcaee9; }
 html[data-theme="dark"] .theme-toggle { border-color: rgba(255, 255, 255, 0.16); }
 html[data-theme="dark"] .theme-toggle button.active { background: #2b3746; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
 html[data-theme="dark"] .theme-toggle button:hover, html[data-theme="dark"] .theme-toggle button:focus-visible { background: rgba(255, 255, 255, 0.12); }
@@ -295,6 +300,11 @@ html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-emp
   html:not([data-theme]) .site-locale { background: #1b2531; border-color: rgba(255, 255, 255, 0.12); box-shadow: none; }
   html:not([data-theme]) .site-locale button { color: #bdc8d5; }
   html:not([data-theme]) .site-locale button.active { background: #2b3746; color: #dcaee9; box-shadow: none; }
+  html:not([data-theme]) .site-navigation.is-open { border-color: rgba(255, 255, 255, 0.12); background: #1a222d; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28); }
+  html:not([data-theme]) .site-navigation.is-open a { border-color: rgba(255, 255, 255, 0.1); color: var(--ink); }
+  html:not([data-theme]) .site-navigation.is-open .site-mobile-locale { border-color: rgba(255, 255, 255, 0.1); }
+  html:not([data-theme]) .site-mobile-locale button { color: #bdc8d5; }
+  html:not([data-theme]) .site-mobile-locale button:hover, html:not([data-theme]) .site-mobile-locale button:focus-visible, html:not([data-theme]) .site-mobile-locale button.active { background: #2b3746; color: #dcaee9; }
   html:not([data-theme]) .theme-toggle { border-color: rgba(255, 255, 255, 0.16); }
   html:not([data-theme]) .theme-toggle button.active { background: #2b3746; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
   html:not([data-theme]) .theme-toggle button:hover, html:not([data-theme]) .theme-toggle button:focus-visible { background: rgba(255, 255, 255, 0.12); }
