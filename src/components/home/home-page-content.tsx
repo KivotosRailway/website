@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouteLocale } from "@/components/layout/locale-context";
+import { PageActionCards } from "@/components/layout/page-action-cards";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,32 +11,22 @@ import { applyLocale, getInitialLocale, withLocale, getLocaleMessages, type Loca
 const homeFeatureCopy: Record<Locale, {
   railway: { title: [string, string]; description: [string, string] };
   city: { title: [string, string]; description: [string, string] };
-  about: string;
-  join: string;
 }> = {
   "zh-Hans": {
     railway: { title: ["从点", "到网"], description: ["从一个车站扩展到线网", "铁路承载了根基"] },
-    city: { title: ["从地面", "到天空"], description: ["城建蓬勃发展", "自由盛放"] },
-    about: "关于我们",
-    join: "加入我们",
+    city: { title: ["从地面", "到天空"], description: ["城市蓬勃发展", "自由盛放"] },
   },
   "zh-Hant": {
     railway: { title: ["從點", "到網"], description: ["從一個車站擴展至路網", "鐵路承載了根基"] },
-    city: { title: ["從地面", "到天空"], description: ["城市建設蓬勃發展", "自由綻放"] },
-    about: "關於我們",
-    join: "加入我們",
+    city: { title: ["從地面", "到天空"], description: ["城市蓬勃發展", "自由綻放"] },
   },
   en: {
     railway: { title: ["From a stop", "to a network"], description: ["From one station to a network.", "Railways carry the foundation."] },
     city: { title: ["From ground", "to sky"], description: ["Cities thrive and grow.", "Ideas bloom freely."] },
-    about: "About us",
-    join: "Join us",
   },
   jp: {
     railway: { title: ["一点から", "ネットワークへ"], description: ["ひとつの駅から路線網へ。", "鉄道がその基盤を支えます。"] },
     city: { title: ["地上から", "空へ"], description: ["都市は大きく発展し、", "自由に花開きます。"] },
-    about: "私たちについて",
-    join: "参加する",
   },
 };
 
@@ -137,16 +128,15 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
         </div>
       </section>
 
-      <section className="home-actions" aria-label={t.common.siteTitle}>
-        <Link href={withLocale("/about", locale)} className="home-action-card">
-          <div className="home-action-image home-action-image--about" aria-hidden="true" />
-          <span>{features.about} <b aria-hidden="true">→</b></span>
-        </Link>
-        <Link href={withLocale("/join-us", locale)} className="home-action-card">
-          <div className="home-action-image home-action-image--join" aria-hidden="true" />
-          <span>{features.join} <b aria-hidden="true">→</b></span>
-        </Link>
-      </section>
+      <PageActionCards
+        locale={locale}
+        label={t.common.siteTitle}
+        className="home-actions"
+        items={[
+          { href: "/about", image: "/home/about-card.png", label: t.footer.columns[1].title },
+          { href: "/join-us", image: "/home/join-card.png", label: t.footer.columns[1].links[2] },
+        ]}
+      />
     </main>
   );
 }

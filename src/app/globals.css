@@ -74,19 +74,29 @@ a { color: inherit; text-decoration: none; }
 .home-collage-small { top: 376px; left: 27.28%; width: 44.3%; height: 272px; background-image: url("/home/collage-3.png"); }
 .home-collage-bottom { top: 376px; left: 0; width: 25.83%; height: 272px; background-image: url("/home/collage-4.png"); }
 .home-collage-tall { top: 0; right: 0; width: 27.1%; height: 648px; background-image: url("/home/collage-5.png"); }
-.home-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 50px; margin-top: 100px; padding-bottom: 121px; }
-.home-action-card { display: block; min-width: 0; color: var(--ink); }
-.home-action-image { height: 323px; border-radius: 13px; background: center / cover no-repeat; transition: transform .2s ease, box-shadow .2s ease; }
-.home-action-image--about { background-image: url("/home/about-card.png"); }
-.home-action-image--join { background-image: url("/home/join-card.png"); }
-.home-action-card > span { display: flex; align-items: center; gap: 20px; margin-top: 42px; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -.04em; }
-.home-action-card b { color: var(--blue); font-family: Arial, sans-serif; font-size: 36px; font-weight: 400; line-height: 1; }
-.home-action-card:hover .home-action-image, .home-action-card:focus-visible .home-action-image { box-shadow: 0 10px 25px rgba(15, 23, 42, .16); transform: translateY(-3px); }
+.page-action-cards { display: grid; width: min(1200px, calc(100% - 32px)); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 50px; margin-right: auto; margin-left: auto; padding-bottom: 121px; }
+.home-actions { margin-top: 100px; }
+.page-action-card { display: block; min-width: 0; color: var(--ink); }
+.page-action-image { height: 323px; border-radius: 13px; background-position: center; background-size: cover; background-repeat: no-repeat; transition: transform .2s ease, box-shadow .2s ease; }
+.page-action-card > span { display: flex; align-items: center; gap: 20px; margin-top: 42px; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -.04em; }
+.page-action-card b { color: var(--blue); font-family: Arial, sans-serif; font-size: 36px; font-weight: 400; line-height: 1; }
+.page-action-card:hover .page-action-image, .page-action-card:focus-visible .page-action-image { box-shadow: 0 10px 25px rgba(15, 23, 42, .16); transform: translateY(-3px); }
+
+.title-page { padding-bottom: 48px; }
+.page-title-hero { position: relative; display: flex; width: min(1200px, calc(100% - 32px)); height: 414px; align-items: flex-start; margin: 0 auto; padding-top: 156px; }
+.page-title-hero-media { position: absolute; inset: 0; overflow: hidden; border-radius: 10px; background-image: var(--page-title-hero-image); background-position: var(--page-title-hero-position); background-size: cover; background-repeat: no-repeat; }
+.page-title-hero-label { position: relative; z-index: 1; margin-left: -44px; padding: 10px 46px; background: #8f56a2; color: #fff; }
+.page-title-hero-label h1 { margin: 0; font-size: 62px; font-weight: 700; line-height: 80.4px; letter-spacing: .25px; }
+.page-location { display: flex; width: min(1200px, calc(100% - 40px)); height: 88.8px; align-items: center; margin: 0 auto; border-top: .8px solid #d9d9d9; }
+.about-introduction { display: grid; width: min(1200px, calc(100% - 32px)); min-height: 512px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 50px auto 0; overflow: hidden; border-radius: 10px; }
+.about-introduction-copy { display: flex; flex-direction: column; justify-content: center; padding: 64px 80px; background: #535360; color: #fff; }
+.about-introduction-copy p { align-self: flex-start; margin: 0 0 39px; padding: 4px 10px; background: #1267d8; color: #fff; font-size: 18px; font-weight: 700; line-height: 28px; }
+.about-introduction-copy h2 { margin: 0; font-size: 40px; font-weight: 700; line-height: 1.28; letter-spacing: -.04em; }
+.about-introduction-image { min-height: 512px; background: url("/pages/about-intro-overlay.png") center / cover no-repeat; }
+.about-action-cards { margin-top: 50px; }
 
 .news-page { padding: 30px 0 60px; }
-.friendly-links-hero { background: var(--policy-hero-image) center 28.2% / 100% auto no-repeat; }
-.friendly-links-page-inner { gap: 50px; }
-.friendly-links-content { width: min(1214px, 100%); margin: 0 auto; }
+.friendly-links-content { width: min(1200px, calc(100% - 32px)); margin: 50px auto 0; }
 .friendly-links-section + .friendly-links-section { margin-top: 50px; }
 .friendly-links-section h2 { margin: 0 0 20px; color: #181c20; font-size: 40px; font-weight: 700; line-height: 48px; }
 .friendly-links-section h2::after { display: block; width: 28.875px; height: 5.25px; margin-top: 17.5px; background: #8f56a2; content: ""; }
@@ -99,10 +109,7 @@ a.friendly-link-card:hover, a.friendly-link-card:focus-visible { border-color: #
 .friendly-link-card-logo img { display: block; width: 65.67px; height: 65.67px; object-fit: cover; }
 .friendly-link-card-description { color: #8d949a; font-size: 16.42px; line-height: 21.89px; text-align: center; }
 .friendly-link-card-archive { position: absolute; top: 13px; right: 5px; padding: 4px 6px; border-radius: 4px; background: #e72329; color: #fff; font-size: 10px; line-height: 12px; }
-.friendly-links-page .page-bottom-nav { margin-top: 176px; }
-.members-page-inner { gap: 50px; }
-.members-hero { background: var(--policy-hero-image) center 47% / 100% auto no-repeat; }
-.members-sections { width: min(1200px, 100%); }
+.members-sections { width: min(1200px, calc(100% - 32px)); margin: 50px auto 0; }
 .member-section + .member-section { margin-top: 46px; }
 .member-section-heading { margin: 0 0 20px; }
 .member-section-heading h2 { margin: 0; color: #202326; font-size: 30px; font-weight: 700; line-height: 1.35; letter-spacing: -.03em; }
@@ -117,7 +124,6 @@ a.member-card:hover, a.member-card:focus-visible { opacity: .82; transform: tran
 .member-card-copy h3 { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.4; letter-spacing: -.03em; }
 .member-card-copy p { margin: 4px 0 0; color: #5f6464; font-size: 14px; line-height: 1.45; }
 .member-empty { margin: 0; padding: 40px 0; color: #697684; font-size: 16px; }
-.members-page .page-bottom-nav { margin-top: 80px; }
 .news-page-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .news-page-header { display: flex; justify-content: center; align-items: center; margin: 0 0 30px; }
 .news-page-header h1 { margin: 0; font-size: clamp(52px, 5vw, 88px); letter-spacing: -0.07em; line-height: 1; font-weight: 800; }
@@ -165,12 +171,8 @@ a.member-card:hover, a.member-card:focus-visible { opacity: .82; transform: tran
 .news-detail-body li { margin: 8px 0; }
 .news-detail-body a, .policy-body a { color: #1267d8; text-decoration: underline; text-underline-offset: 3px; }
 .news-detail-body a:hover, .policy-body a:hover { color: #8f56a2; }
-.policy-page { padding: 0 0 48px; background: #fff; }
-.policy-page-inner { display: flex; flex-direction: column; gap: 50px; align-items: center; padding: 0 40px 48px; }
-.policy-hero { width: min(1200px, 100%); min-height: 322px; display: flex; align-items: flex-start; padding: 156px 48px 0; border-radius: 10px; background: linear-gradient(110deg, rgba(143, 86, 162, 0.82), rgba(143, 86, 162, 0.18)), var(--policy-hero-image, url("/policy-hero.png")) center / cover; overflow: hidden; }
-.policy-hero-inner { margin-left: -48px; padding: 10px 46px; background: #8f56a2; }
-.policy-hero h1 { margin: 0; color: #fff; font-size: clamp(38px, 4vw, 62px); line-height: 1.3; letter-spacing: 0.25px; }
-.policy-card { width: min(1200px, 100%); padding: 28px; border-radius: 26px; background: #fefdfa; box-shadow: 0 10px 15px rgba(15, 23, 42, 0.04); }
+.policy-page { background: var(--paper); }
+.policy-card { width: min(1200px, calc(100% - 32px)); margin: 50px auto 0; padding: 28px; border-radius: 26px; background: #fefdfa; box-shadow: 0 10px 15px rgba(15, 23, 42, 0.04); }
 .policy-ai-notice { display: inline-flex; margin: 0 0 26px; padding: 6px 12px; border-radius: 999px; background: rgba(255, 179, 15, 0.1); color: #ff8f0f; font-size: 13px; line-height: 1.5; }
 .policy-body { color: #1d2732; font-size: 17px; line-height: 1.9; }
 .policy-body h1, .policy-body h2, .policy-body h3 { color: #8f56a2; font-weight: 400; }
@@ -263,6 +265,8 @@ html[data-theme="dark"] .news-detail-body, html[data-theme="dark"] .policy-body 
 html[data-theme="dark"] .policy-page { background: var(--paper); }
 html[data-theme="dark"] .policy-card { background: #19222d; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); }
 html[data-theme="dark"] .page-bottom-nav { border-color: #394553; }
+html[data-theme="dark"] .page-location { border-color: #394553; }
+html[data-theme="dark"] .about-introduction-copy { background: #1a222d; }
 html[data-theme="dark"] .page-breadcrumb, html[data-theme="dark"] .page-breadcrumb-separator, html[data-theme="dark"] .page-breadcrumb a { color: #cbd5df; }
 html[data-theme="dark"] .news-share { border-color: rgba(255, 255, 255, 0.14); }
 html[data-theme="dark"] .status-code, html[data-theme="dark"] .status-content h1 { color: var(--ink); }
@@ -307,6 +311,8 @@ html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-emp
   html:not([data-theme]) .policy-page { background: var(--paper); }
   html:not([data-theme]) .policy-card { background: #19222d; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); }
   html:not([data-theme]) .page-bottom-nav { border-color: #394553; }
+  html:not([data-theme]) .page-location { border-color: #394553; }
+  html:not([data-theme]) .about-introduction-copy { background: #1a222d; }
   html:not([data-theme]) .page-breadcrumb, html:not([data-theme]) .page-breadcrumb-separator, html:not([data-theme]) .page-breadcrumb a { color: #cbd5df; }
   html:not([data-theme]) .news-share { border-color: rgba(255, 255, 255, 0.14); }
   html:not([data-theme]) .status-code, html:not([data-theme]) .status-content h1 { color: var(--ink); }
@@ -364,18 +370,25 @@ html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-emp
   .home-collage-small { top: 202px; left: 39%; width: 61%; height: 158px; }
   .home-collage-tall { display: none; }
   .home-news { margin-top: 48px; }
-  .home-actions { width: calc(100% - 32px); grid-template-columns: 1fr; gap: 42px; margin-top: 48px; padding-bottom: 48px; }
-  .home-action-image { height: auto; aspect-ratio: 575 / 323; }
-  .home-action-card > span { margin-top: 24px; font-size: clamp(32px, 7vw, 42px); }
+  .page-action-cards { width: calc(100% - 32px); grid-template-columns: 1fr; gap: 42px; padding-bottom: 48px; }
+  .home-actions, .about-action-cards { margin-top: 48px; }
+  .page-action-image { height: auto; aspect-ratio: 575 / 323; }
+  .page-action-card > span { margin-top: 24px; font-size: clamp(32px, 7vw, 42px); }
+  .title-page { padding-bottom: 32px; }
+  .page-title-hero { width: calc(100% - 32px); height: clamp(300px, 46vw, 414px); padding-top: clamp(104px, 17.3vw, 156px); }
+  .page-title-hero-label { margin-left: -20px; padding: 8px 32px; }
+  .page-title-hero-label h1 { font-size: clamp(40px, 6.88vw, 62px); line-height: 1.3; }
+  .page-location { width: calc(100% - 32px); min-height: 80px; height: auto; padding: 24px 0; }
+  .about-introduction { width: calc(100% - 32px); min-height: 420px; margin-top: 48px; }
+  .about-introduction-copy { padding: 48px; }
+  .about-introduction-copy h2 { font-size: clamp(32px, 4.45vw, 40px); }
+  .about-introduction-image { min-height: 420px; }
   .news-page-inner { padding: 0 16px; }
   .friendly-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .news-page-header h1 { font-size: clamp(46px, 12vw, 72px); }
   .news-toolbar { align-items: flex-start; flex-wrap: wrap; gap: 16px; }
   .news-toolbar-right { margin-left: auto; }
-  .policy-page-inner { gap: 28px; padding: 0 16px 32px; }
-  .policy-hero { min-height: 220px; padding: 90px 28px 0; }
-  .policy-hero-inner { margin-left: -28px; padding: 8px 28px; }
-  .policy-card { padding: 20px; border-radius: 20px; }
+  .policy-card { width: calc(100% - 32px); margin-top: 48px; padding: 20px; border-radius: 20px; }
   .policy-body { font-size: 16px; }
   .policy-body h1 { font-size: 38px; }
   .policy-body h2 { margin-top: 32px; font-size: 36px; }
@@ -433,12 +446,23 @@ html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-emp
   .home-collage { width: calc(100% - 24px); height: 280px; margin-top: 36px; }
   .home-collage-wide, .home-collage-medium { height: 148px; }
   .home-collage-bottom, .home-collage-small { top: 160px; height: 120px; }
-  .home-actions { width: calc(100% - 24px); gap: 32px; margin-top: 36px; padding-bottom: 24px; }
-  .home-action-card > span { gap: 14px; margin-top: 18px; font-size: 30px; }
-  .home-action-card b { font-size: 30px; }
+  .page-action-cards { width: calc(100% - 24px); gap: 32px; padding-bottom: 24px; }
+  .home-actions, .about-action-cards { margin-top: 36px; }
+  .page-action-card > span { gap: 14px; margin-top: 18px; font-size: 30px; }
+  .page-action-card b { font-size: 30px; }
+  .title-page { padding-bottom: 24px; }
+  .page-title-hero { width: calc(100% - 24px); height: 290px; padding-top: 96px; }
+  .page-title-hero-label { margin-left: -12px; padding: 8px 26px; }
+  .page-title-hero-label h1 { font-size: clamp(34px, 10vw, 42px); line-height: 1.3; }
+  .page-location { width: calc(100% - 24px); min-height: 72px; padding: 20px 0; }
+  .about-introduction { width: calc(100% - 24px); grid-template-columns: 1fr; min-height: 0; margin-top: 36px; }
+  .about-introduction-copy { min-height: 280px; padding: 42px 28px; }
+  .about-introduction-copy p { margin-bottom: 24px; }
+  .about-introduction-copy h2 { font-size: clamp(30px, 8.5vw, 36px); }
+  .about-introduction-image { min-height: 280px; }
 
   .news-page { padding-top: 20px; }
-  .friendly-links-content { width: 100%; }
+  .friendly-links-content, .members-sections { width: calc(100% - 24px); margin-top: 36px; }
   .friendly-links-section + .friendly-links-section { margin-top: 36px; }
   .friendly-links-section h2 { margin-bottom: 16px; font-size: 30px; line-height: 1.35; }
   .friendly-links-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -474,11 +498,7 @@ html[data-theme="dark"] .member-card-copy p, html[data-theme="dark"] .member-emp
   .status-content h1 { overflow-wrap: anywhere; }
   .status-back-button { font-size: 24px; }
 
-  .policy-page-inner { gap: 20px; padding: 0 12px 24px; }
-  .policy-hero { min-height: 170px; padding: 64px 20px 0; border-radius: 8px; }
-  .policy-hero-inner { margin-left: -20px; padding: 7px 20px; max-width: 100%; }
-  .policy-hero h1 { font-size: 34px; overflow-wrap: anywhere; }
-  .policy-card { padding: 16px; border-radius: 18px; }
+  .policy-card { width: calc(100% - 24px); margin-top: 36px; padding: 16px; border-radius: 18px; }
   .policy-body { font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
   .policy-body h1 { font-size: 34px; }
   .policy-body h2 { margin: 30px 0 18px; font-size: 34px; }

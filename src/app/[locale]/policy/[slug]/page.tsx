@@ -22,5 +22,5 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   if (!isLocale(locale)) notFound();
   const catalog = await getPolicyCatalog(slug);
   if (!catalog["zh-Hans"]) notFound();
-  return <main className="policy-page"><div className="policy-page-inner"><PolicyPageContent catalog={catalog} /></div></main>;
+  return <PolicyPageContent catalog={catalog} />;
 }

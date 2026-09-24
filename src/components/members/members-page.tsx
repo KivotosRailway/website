@@ -1,6 +1,6 @@
 import members from "@/data/members.json";
-import type { CSSProperties } from "react";
-import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
+import { PageLocation } from "@/components/layout/page-location";
+import { PageTitleHero } from "@/components/layout/page-title-hero";
 import { getLocaleMessages, type Locale } from "@/lib/i18n";
 
 type LocalizedText = Record<Locale, string>;
@@ -43,14 +43,11 @@ function MemberCard({ member, locale }: { member: MemberEntry; locale: Locale })
 export function MembersPage({ locale }: { locale: Locale }) {
   const messages = getLocaleMessages(locale);
   const pageTitle = memberData.title[locale];
-  const heroStyle = { "--policy-hero-image": 'url("/members/members-hero.png")' } as CSSProperties;
 
   return (
-    <main className="policy-page members-page">
-      <div className="policy-page-inner members-page-inner">
-        <section className="policy-hero members-hero" aria-labelledby="members-page-title" style={heroStyle}>
-          <div className="policy-hero-inner"><h1 id="members-page-title">{pageTitle}</h1></div>
-        </section>
+    <>
+      <main className="title-page members-page">
+        <PageTitleHero title={pageTitle} image="/members/members-hero.png" imagePosition="center 47%" />
         <div className="members-sections">
           {memberData.sections.map((section) => (
             <section className="member-section" key={section.id} aria-labelledby={`members-${section.id}`}>
@@ -63,8 +60,11 @@ export function MembersPage({ locale }: { locale: Locale }) {
             </section>
           ))}
         </div>
-      </div>
-      <div className="page-bottom-nav"><div className="page-bottom-nav-inner"><PageBreadcrumb items={[{ label: messages.common.home, href: "/" }, { label: messages.footer.columns[1].title }, { label: pageTitle }]} /></div></div>
-    </main>
+      </main>
+      <PageLocation
+        ariaLabel={messages.common.pagePosition}
+        items={[{ label: messages.common.home, href: "/" }, { label: messages.footer.columns[1].title }, { label: pageTitle }]}
+      />
+    </>
   );
 }

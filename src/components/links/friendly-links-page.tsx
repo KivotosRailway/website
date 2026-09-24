@@ -1,6 +1,6 @@
 import links from "@/data/links.json";
-import type { CSSProperties } from "react";
-import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
+import { PageLocation } from "@/components/layout/page-location";
+import { PageTitleHero } from "@/components/layout/page-title-hero";
 import { getLocaleMessages, type Locale } from "@/lib/i18n";
 
 type LocalizedText = Partial<Record<Locale, string>>;
@@ -48,15 +48,12 @@ function FriendlyLinkCard({ link, locale, visitLabel }: { link: LinkEntry; local
 
 export function FriendlyLinksPage({ locale }: { locale: Locale }) {
   const messages = getLocaleMessages(locale);
-  const heroStyle = { "--policy-hero-image": 'url("/links/friendly-links-hero.png")' } as CSSProperties;
   const visitLabels: Record<Locale, string> = { "zh-Hans": "访问", "zh-Hant": "造訪", en: "Visit", jp: "訪問" };
 
   return (
-    <main className="policy-page friendly-links-page">
-      <div className="policy-page-inner friendly-links-page-inner">
-        <section className="policy-hero friendly-links-hero" aria-labelledby="friendly-links-title" style={heroStyle}>
-          <div className="policy-hero-inner"><h1 id="friendly-links-title">{messages.footer.legal[2]}</h1></div>
-        </section>
+    <>
+      <main className="title-page friendly-links-page">
+        <PageTitleHero title={messages.footer.legal[2]} image="/links/friendly-links-hero.png" imagePosition="center 28.2%" />
         <div className="friendly-links-content">
           {linkSections.map((section) => (
             <section className="friendly-links-section" key={section.id} aria-labelledby={`friendly-links-${section.id}`}>
@@ -67,8 +64,8 @@ export function FriendlyLinksPage({ locale }: { locale: Locale }) {
             </section>
           ))}
         </div>
-      </div>
-      <div className="page-bottom-nav"><div className="page-bottom-nav-inner"><PageBreadcrumb items={[{ label: messages.common.home, href: "/" }, { label: messages.footer.legal[2] }]} /></div></div>
-    </main>
+      </main>
+      <PageLocation ariaLabel={messages.common.pagePosition} items={[{ label: messages.common.home, href: "/" }, { label: messages.footer.legal[2] }]} />
+    </>
   );
 }
