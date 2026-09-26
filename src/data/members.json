@@ -82,7 +82,59 @@
         "en": "Members",
         "jp": "メンバー"
       },
-      "members": []
+      "members": [
+        {
+          "name": "KKKmina",
+          "role": "生存玩家",
+          "avatar": "/icon/avatar/kkkmina.webp",
+          "url": "https://b23.tv/kFuvOWc",
+          "i18n": {
+            "name": {
+              "en": "KKKmina",
+              "jp": "KKKmina"
+            },
+            "role": {
+              "zh-Hant": "生存玩家",
+              "en": "Survival player",
+              "jp": "サバイバルプレイヤー"
+            }
+          }
+        },
+        {
+          "name": "綺羅鳴",
+          "role": "生存玩家",
+          "avatar": "/icon/avatar/kira-mei.webp",
+          "url": "https://b23.tv/Snk5kvX",
+          "i18n": {
+            "name": {
+              "en": "綺羅鳴",
+              "jp": "綺羅鳴"
+            },
+            "role": {
+              "zh-Hant": "建築玩家",
+              "en": "Architectural Enthusiast",
+              "jp": "建築ゲーマー"
+            }
+          }
+        },
+        {
+          "name": "梁仟凌伍年",
+          "role": "土木建设积极分子",
+          "avatar": "/icon/avatar/simong.webp",
+          "url": "https://b23.tv/aMg35N7",
+          "i18n": {
+            "name": {
+              "en": "梁仟凌伍年",
+              "jp": "梁仟凌伍年"
+            },
+            "role": {
+              "zh-Hant": "土木建設積極分子",
+              "en": "Civil engineering and construction activist",
+              "jp": "土木建設活動家"
+            }
+          }
+        }
+      ]
     }
   ]
 }
