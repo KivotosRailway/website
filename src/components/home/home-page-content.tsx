@@ -1,12 +1,8 @@
-"use client";
-
-import { useRouteLocale } from "@/components/layout/locale-context";
 import { PageActionCards } from "@/components/layout/page-action-cards";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import type { NewsItem } from "@/data/news";
-import { applyLocale, getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import type { NewsSummary } from "@/data/news";
+import { withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 const homeFeatureCopy: Record<Locale, {
   railway: { title: [string, string]; description: [string, string] };
@@ -30,40 +26,8 @@ const homeFeatureCopy: Record<Locale, {
   },
 };
 
-export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale, NewsItem[]> }) {
-  const [locale, setLocale] = useState<Locale>(useRouteLocale());
-
-  useEffect(() => {
-    const syncLocale = (nextLocale: Locale) => setLocale(nextLocale);
-
-    const currentLocale = getInitialLocale();
-    syncLocale(currentLocale);
-    applyLocale(currentLocale);
-
-    const onLocaleChange = (event: Event) => {
-      const detail = (event as CustomEvent<{ locale?: Locale }>).detail;
-      if (detail?.locale) {
-        setLocale(detail.locale);
-      }
-    };
-
-    const handleStorage = () => {
-      const nextLocale = getInitialLocale();
-      syncLocale(nextLocale);
-      applyLocale(nextLocale);
-    };
-
-    window.addEventListener("kr-locale-change", onLocaleChange);
-    window.addEventListener("storage", handleStorage);
-
-    return () => {
-      window.removeEventListener("kr-locale-change", onLocaleChange);
-      window.removeEventListener("storage", handleStorage);
-    };
-  }, []);
-
+export function HomePageContent({ news, locale }: { news: NewsSummary[]; locale: Locale }) {
   const t = getLocaleMessages(locale);
-  const visibleNews = newsByLocale[locale] ?? newsByLocale["zh-Hans"] ?? [];
   const features = homeFeatureCopy[locale];
 
   return (
@@ -116,7 +80,7 @@ export function HomePageContent({ newsByLocale }: { newsByLocale: Record<Locale,
         </div>
 
         <div className="news-grid" aria-label={t.home.latest}>
-          {visibleNews.slice(0, 3).map((post) => (
+          {news.map((post) => (
             <article key={post.id} className="news-card">
               <Link href={withLocale(post.href, locale)} className="news-card-link" aria-label={post.title}>
                 <div className="news-visual" style={{ backgroundImage: `url(${post.cover})` }} />

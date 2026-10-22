@@ -14,7 +14,15 @@ export type NewsItem = {
   tags: string[];
   markdownFile: string;
   body: string;
+  contentLocale: Locale;
 };
+
+export type NewsSummary = Pick<NewsItem, "id" | "slug" | "title" | "date" | "cover" | "href" | "category">;
+
+function summarize(item: NewsItem): NewsSummary {
+  const { id, slug, title, date, cover, href, category } = item;
+  return { id, slug, title, date, cover, href, category };
+}
 
 type NewsFrontmatter = {
   title?: string;
@@ -66,7 +74,7 @@ function stripFrontmatter(markdown: string): string {
 
 const DEFAULT_NEWS_COVER = "https://assets.kivotos.cc/image/2025/05/01/681397ba4e763.png";
 
-function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string): NewsItem | null {
+function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string, locale: Locale): NewsItem | null {
   const title = raw.title?.trim();
   const date = raw.date?.trim() || "未注明日期";
   const category = (Array.isArray(raw.category) ? raw.category[0] : raw.category)?.trim() || "未分类";
@@ -90,11 +98,12 @@ function normalizeNewsItem(fileName: string, raw: NewsFrontmatter, body: string)
     tags,
     markdownFile: `src/data/news/posts/${fileName}`,
     body,
+    contentLocale: locale,
   };
 }
 
-async function readNewsList(locale: Locale): Promise<NewsItem[]> {
-  const directory = path.join(process.cwd(), "src", "data", "news", "posts", localeContentDirectory[locale]);
+async function readNewsList(root: string, locale: Locale): Promise<NewsItem[]> {
+  const directory = path.join(root, localeContentDirectory[locale]);
 
   try {
     const files = (await fs.readdir(directory))
@@ -107,7 +116,7 @@ async function readNewsList(locale: Locale): Promise<NewsItem[]> {
         const content = await fs.readFile(filePath, "utf-8");
         const frontmatter = parseFrontmatter(content);
         const body = stripFrontmatter(content);
-        return normalizeNewsItem(fileName, frontmatter, body);
+        return normalizeNewsItem(fileName, frontmatter, body, locale);
       }),
     );
 
@@ -117,34 +126,36 @@ async function readNewsList(locale: Locale): Promise<NewsItem[]> {
       const firstTime = Date.parse(first.date);
       return (Number.isNaN(secondTime) ? 0 : secondTime) - (Number.isNaN(firstTime) ? 0 : firstTime);
     });
-  } catch {
-    return [];
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
+    throw error;
   }
 }
 
-export async function getNewsList(locale: Locale = "zh-Hans"): Promise<NewsItem[]> {
-  const items = await readNewsList(locale);
-  return locale === "zh-Hans" || items.length > 0 ? items : readNewsList("zh-Hans");
-}
-
-export async function getNewsCatalog(): Promise<Record<Locale, NewsItem[]>> {
-  const source = await readNewsList("zh-Hans");
-  const entries = await Promise.all((["zh-Hans", "zh-Hant", "en", "jp"] as Locale[]).map(async (locale) => {
-    if (locale === "zh-Hans") return [locale, source] as const;
-
-    const translated = await readNewsList(locale);
+// The source catalog defines public slugs; a missing translation falls back per article.
+export function createNewsReader(root: string) {
+  async function readLocalizedNews(locale: Locale) {
+    const [source, translated] = await Promise.all([
+      readNewsList(root, "zh-Hans"),
+      locale === "zh-Hans" ? Promise.resolve([]) : readNewsList(root, locale),
+    ]);
     const bySlug = new Map(translated.map((item) => [item.slug, item]));
-    return [locale, source.map((item) => bySlug.get(item.slug) ?? item)] as const;
-  }));
-  return Object.fromEntries(entries) as Record<Locale, NewsItem[]>;
+    return source.map((item) => bySlug.get(item.slug) ?? item);
+  }
+
+  return {
+    async getNewsList(locale: Locale = "zh-Hans"): Promise<NewsSummary[]> {
+      return (await readLocalizedNews(locale)).map(summarize);
+    },
+    async getNewsBySlug(slug: string, locale: Locale = "zh-Hans"): Promise<NewsItem | null> {
+      return (await readLocalizedNews(locale)).find((item) => item.slug === slug) ?? null;
+    },
+    async getLatestNews(locale: Locale = "zh-Hans"): Promise<NewsSummary[]> {
+      return (await readLocalizedNews(locale)).slice(0, 3).map(summarize);
+    },
+  };
 }
 
-export async function getNewsBySlug(slug: string, locale: Locale = "zh-Hans"): Promise<NewsItem | null> {
-  const items = await getNewsList(locale);
-  return items.find((item) => item.slug === slug) ?? null;
-}
-
-export async function getLatestNews(locale: Locale = "zh-Hans") {
-  const items = await getNewsList(locale);
-  return items.slice(0, 3);
-}
+export const { getNewsList, getNewsBySlug, getLatestNews } = createNewsReader(
+  path.join(process.cwd(), "src", "data", "news", "posts"),
+);

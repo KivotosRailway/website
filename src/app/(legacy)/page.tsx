@@ -1,8 +1,9 @@
 import { HomePageContent } from "@/components/home/home-page-content";
-import { getNewsCatalog } from "@/data/news";
+import { getLatestNews } from "@/data/news";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("zh-Hans", "/");
 
 export default async function Home() {
-  const newsByLocale = await getNewsCatalog();
-
-  return <HomePageContent newsByLocale={newsByLocale} />;
+  return <HomePageContent locale="zh-Hans" news={await getLatestNews("zh-Hans")} />;
 }

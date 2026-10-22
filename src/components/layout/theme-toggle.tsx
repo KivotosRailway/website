@@ -3,47 +3,13 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { applyTheme, getInitialThemePreference, type ThemePreference } from "@/lib/theme";
 import { useEffect, useState } from "react";
 import { getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
-type ThemePreference = "light" | "system" | "dark";
-type ResolvedTheme = "light" | "dark";
-const themeCookieName = "kr-theme";
-
-function getThemeCookie(): ThemePreference | null {
-  const value = document.cookie
-    .split(";")
-    .map((entry) => entry.trim())
-    .find((entry) => entry.startsWith(`${themeCookieName}=`))
-    ?.slice(themeCookieName.length + 1);
-
-  return value === "light" || value === "system" || value === "dark" ? value : null;
-}
-
-function getInitialThemePreference(): ThemePreference {
-  if (typeof window === "undefined") return "system";
-
-  const cookieTheme = getThemeCookie();
-  if (cookieTheme) return cookieTheme;
-
-  const savedTheme = window.localStorage.getItem("kr-theme");
-  return savedTheme === "light" || savedTheme === "system" || savedTheme === "dark" ? savedTheme : "system";
-}
-
-function resolveTheme(preference: ThemePreference): ResolvedTheme {
-  if (preference !== "system") return preference;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-function applyTheme(preference: ThemePreference) {
-  const theme = resolveTheme(preference);
-  document.documentElement.dataset.theme = theme;
-  document.documentElement.style.colorScheme = theme;
-  window.localStorage.setItem("kr-theme", preference);
-  document.cookie = `${themeCookieName}=${preference}; Path=/; Max-Age=31536000; SameSite=Lax`;
-}
-
 export function ThemeToggle() {
+  const pathname = usePathname();
   const [themePreference, setThemePreference] = useState<ThemePreference>("system");
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
 
@@ -70,7 +36,7 @@ export function ThemeToggle() {
       window.removeEventListener("storage", syncTheme);
       mediaQuery.removeEventListener("change", syncSystemTheme);
     };
-  }, []);
+  }, [pathname]);
 
   const messages = getLocaleMessages(locale);
   const options: { theme: ThemePreference; label: string; icon: string }[] = [

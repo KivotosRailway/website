@@ -6,6 +6,11 @@ import ja from "@/locales/ja.json";
 export const locales = ["zh-Hans", "zh-Hant", "en", "jp"] as const;
 export type Locale = (typeof locales)[number];
 
+// Public route /jp/ is retained; HTML and hreflang use the BCP 47 language code.
+export const localeLanguageTags: Record<Locale, string> = {
+  "zh-Hans": "zh-Hans", "zh-Hant": "zh-Hant", en: "en", jp: "ja",
+};
+
 // Content storage retains its original names; public URLs use script subtags.
 export const localeContentDirectory: Record<Locale, string> = {
   "zh-Hans": "zh-CN", "zh-Hant": "zh-TW", en: "en", jp: "ja",
@@ -80,7 +85,7 @@ export function applyLocale(locale: Locale) {
     window.location.replace(localizedHref);
     return;
   }
-  document.documentElement.lang = locale;
+  document.documentElement.lang = localeLanguageTags[locale];
   document.documentElement.setAttribute("data-locale", locale);
   window.dispatchEvent(new CustomEvent("kr-locale-change", { detail: { locale } }));
 }

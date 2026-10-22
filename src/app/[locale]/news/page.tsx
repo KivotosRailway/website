@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getNewsList } from "@/data/news";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
@@ -8,7 +9,7 @@ import { getLocaleMessages, isLocale } from "@/lib/i18n";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return { title: getLocaleMessages(locale).common.news };
+  return pageMetadata(locale, "/news", { title: getLocaleMessages(locale).common.news });
 }
 
 export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {

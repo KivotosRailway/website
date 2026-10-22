@@ -9,11 +9,15 @@
   "scripts": {
     "dev": "next dev",
     "cache-images": "node scripts/cache-images.mjs",
-    "build": "next build",
+    "build": "next build && tsx scripts/finalize-export.mts",
     "start": "next start",
     "lint": "eslint",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "preview": "wrangler dev",
+    "test": "tsx --test tests/unit/*.test.ts",
+    "test:e2e": "playwright test",
+    "check": "corepack pnpm lint && corepack pnpm test && corepack pnpm build && corepack pnpm test:export && corepack pnpm test:e2e",
+    "test:export": "tsx --test tests/export/*.test.ts"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans": "5.3.0",
@@ -24,11 +28,13 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@types/node": "22.20.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "eslint": "9.39.1",
     "eslint-config-next": "16.3.5",
+    "tsx": "4.23.15",
     "typescript": "5.9.3",
     "wrangler": "4.131.1"
   }

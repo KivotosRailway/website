@@ -15,3 +15,7 @@
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Regression test output
+/test-results/
+/playwright-report/

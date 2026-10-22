@@ -1,33 +1,11 @@
-"use client";
-
-import { useRouteLocale } from "@/components/layout/locale-context";
-
-import { useEffect, useState } from "react";
-import { getAiTranslationNotice, getInitialLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
+import { getAiTranslationNotice, getLocaleMessages, type Locale } from "@/lib/i18n";
 import type { PolicyDocument } from "@/data/policy";
 import { PageLocation } from "@/components/layout/page-location";
 import { PageTitleHero } from "@/components/layout/page-title-hero";
 
-type PolicyCatalog = Partial<Record<Locale, PolicyDocument>>;
-
-export function PolicyPageContent({ catalog }: { catalog: PolicyCatalog }) {
-  const [locale, setLocale] = useState<Locale>(useRouteLocale());
-  const document = catalog[locale] ?? catalog["zh-Hans"];
-  const isTranslated = locale !== "zh-Hans" && Boolean(catalog[locale]);
+export function PolicyPageContent({ document, locale }: { document: PolicyDocument; locale: Locale }) {
+  const isTranslated = document.contentLocale !== "zh-Hans";
   const messages = getLocaleMessages(locale);
-
-  useEffect(() => {
-    const syncLocale = () => setLocale(getInitialLocale());
-    syncLocale();
-    window.addEventListener("kr-locale-change", syncLocale);
-    window.addEventListener("storage", syncLocale);
-    return () => {
-      window.removeEventListener("kr-locale-change", syncLocale);
-      window.removeEventListener("storage", syncLocale);
-    };
-  }, []);
-
-  if (!document) return null;
 
   return (
     <>

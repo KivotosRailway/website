@@ -5,8 +5,8 @@ import { useRouteLocale } from "@/components/layout/locale-context";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { applyLocale, getInitialLocale, withLocale, withoutLocale, getLocaleMessages, localeLabels, locales, localeShortLabels, type Locale } from "@/lib/i18n";
+import { useState } from "react";
+import { withLocale, getLocaleMessages, localeLabels, locales, localeShortLabels, type Locale } from "@/lib/i18n";
 
 export function SiteHeader() {
   const locale = useRouteLocale();
@@ -21,44 +21,6 @@ export function SiteHeader() {
     const href = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     router.replace(withLocale(href, nextLocale));
   };
-
-  useEffect(() => {
-    const updateDocumentTitle = (nextLocale: Locale) => {
-      const messages = getLocaleMessages(nextLocale);
-      const pathname = withoutLocale(window.location.pathname).replace(/\/$/, "") || "/";
-      const currentTitle = document.title.split(" | ")[0];
-      const pageLabel = pathname === "/"
-        ? ""
-        : pathname === "/news"
-          ? messages.common.news
-          : currentTitle;
-
-      document.title = pageLabel ? `${pageLabel} | ${messages.common.siteTitle}` : messages.common.siteTitle;
-    };
-
-    const syncLocale = (nextLocale: Locale) => updateDocumentTitle(nextLocale);
-
-    const handleLocaleChange = (event: Event) => {
-      const nextLocale = (event as CustomEvent<{ locale?: Locale }>).detail?.locale ?? getInitialLocale();
-      syncLocale(nextLocale);
-    };
-
-    const handleStorage = () => {
-      syncLocale(getInitialLocale());
-    };
-
-    const currentLocale = getInitialLocale();
-    syncLocale(currentLocale);
-    applyLocale(currentLocale);
-
-    window.addEventListener("kr-locale-change", handleLocaleChange);
-    window.addEventListener("storage", handleStorage);
-
-    return () => {
-      window.removeEventListener("kr-locale-change", handleLocaleChange);
-      window.removeEventListener("storage", handleStorage);
-    };
-  }, []);
 
   const messages = getLocaleMessages(locale);
 

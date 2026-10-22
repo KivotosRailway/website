@@ -4,12 +4,12 @@ import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import type { NewsItem } from "@/data/news";
+import type { NewsSummary } from "@/data/news";
 import { getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
 const ITEMS_PER_PAGE = 12;
 
-export function NewsList({ news }: { news: NewsItem[] }) {
+export function NewsList({ news }: { news: NewsSummary[] }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [locale, setLocale] = useState<Locale>(useRouteLocale());
   const [currentPage, setCurrentPage] = useState(1);

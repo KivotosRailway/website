@@ -14,6 +14,7 @@ export type PolicyDocument = {
   body: string;
   html: string;
   markdownFile: string;
+  contentLocale: Locale;
 };
 
 function isPolicySlug(slug: string): slug is PolicySlug {
@@ -39,20 +40,18 @@ async function readPolicy(slug: PolicySlug, locale: Locale): Promise<PolicyDocum
       body: content,
       html: markdownToHtml(content),
       markdownFile: `src/data/policy/${localeContentDirectory[locale]}/${slug}.md`,
+      contentLocale: locale,
     };
-  } catch {
-    return null;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw error;
   }
 }
 
-export async function getPolicyCatalog(slug: string): Promise<Partial<Record<Locale, PolicyDocument>>> {
-  if (!isPolicySlug(slug)) return {};
-
-  const entries = await Promise.all(
-    (["zh-Hans", "zh-Hant", "en", "jp"] as Locale[]).map(async (locale) => [locale, await readPolicy(slug, locale)] as const),
-  );
-
-  return Object.fromEntries(entries.filter(([, document]) => document)) as Partial<Record<Locale, PolicyDocument>>;
+export async function getPolicyDocument(slug: string, locale: Locale): Promise<PolicyDocument | null> {
+  if (!isPolicySlug(slug)) return null;
+  const document = await readPolicy(slug, locale);
+  return document ?? (locale === "zh-Hans" ? null : readPolicy(slug, "zh-Hans"));
 }
 
 export function getPolicySlugs() {
