@@ -11,7 +11,7 @@ KivotosRailway 的官方网站。本站提供新闻、政策与免责声明、�
 
 ## 本地运行
 
-建议使用 Node.js 22.11.0 与 pnpm 10.24.0。
+使用 Node.js 24.22.1 与 pnpm 11.25.0（与 `.nvmrc` 和 `package.json` 一致）。
 
 ```bash
 corepack pnpm install --frozen-lockfile

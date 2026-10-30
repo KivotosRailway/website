@@ -2,9 +2,9 @@
   "name": "kivotosrailway-website-v2",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@11.25.0",
   "engines": {
-    "node": ">=22.11.0 <23"
+    "node": ">=24.22.1 <25"
   },
   "scripts": {
     "dev": "next dev",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",
-    "@types/node": "22.20.2",
+    "@types/node": "24.19.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "eslint": "9.39.1",

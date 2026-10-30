@@ -12,7 +12,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## 运行环境与验证
 
-- 使用 Node.js 22.11.0 和 pnpm 10.24.0。版本分别由 `.nvmrc`、`edgeone.json` 和 `package.json` 固定；不要升级到 pnpm 11，EdgeOne 当前没有 Node.js 22.13.0。
+- 使用 Node.js 24.22.1 和 pnpm 11.25.0。版本分别由 `.nvmrc`、`edgeone.json` 和 `package.json` 固定；EdgeOne 会按 `.nvmrc` 下载未预装的 Node.js 版本。
 - 依赖必须使用 `corepack pnpm install --frozen-lockfile` 安装。修改直接依赖后同步更新 `pnpm-lock.yaml`。
 - 修改 TypeScript、样式、路由、数据读取或构建配置后，运行 `corepack pnpm lint` 和 `corepack pnpm build`。构建必须生成 `out/`，并检查 `git diff --check`。
 - 本项目使用 `output: "export"`。不要引入依赖服务器运行时、请求时 API、Next Image 默认优化器或无法在静态导出中生成的动态路由实现。
@@ -42,6 +42,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## EdgeOne 与 Cloudflare
 
-- EdgeOne 静态构建命令：`pnpm run build`；发布由平台执行。其配置在 `edgeone.json`，其中 Node.js 版本必须为 `22.11.0`。
+- EdgeOne 静态构建命令：`pnpm run build`；发布由平台执行。其配置在 `edgeone.json`，其中 Node.js 版本必须为 `24.22.1`。
 - Cloudflare 静态资源配置位于 `wrangler.jsonc`，目标目录是 `./out`。部署使用 `pnpm run deploy`，本地 Worker 预览使用 `pnpm run preview`。
 - 不要提交 `.next/`、`out/` 或 `node_modules/`。若静态导出页面数量或产物显著增大，先检查重复的 legacy 路由和传到客户端的数据量，以免耗尽 EdgeOne 构建内存盘。
