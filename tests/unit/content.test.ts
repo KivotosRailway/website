@@ -4,6 +4,7 @@ import { test } from "node:test";
 import { createNewsReader } from "../../src/data/news";
 import { isLocale, localeLanguageTags, withLocale } from "../../src/lib/i18n";
 import { languageAlternates, pageMetadata } from "../../src/lib/seo";
+import { markdownToHtml } from "../../src/lib/markdown";
 
 const news = createNewsReader(path.resolve("tests/fixtures/news"));
 
@@ -45,4 +46,9 @@ test("locale URLs retain query/hash and SEO language tags do not change public r
   assert.match(String(metadata.alternates?.canonical), /\/en\/about\/$/);
   assert.ok(metadata.twitter && "card" in metadata.twitter);
   assert.equal(metadata.twitter.card, "summary_large_image");
+});
+
+test("markdown images load lazily without changing their source", () => {
+  const html = markdownToHtml("![Station](https://example.com/station.png)");
+  assert.match(html, /<img loading="lazy" decoding="async" src="https:\/\/example\.com\/station\.png" alt="Station">/);
 });

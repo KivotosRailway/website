@@ -1,6 +1,7 @@
 import { PageActionCards } from "@/components/layout/page-action-cards";
 
 import Link from "next/link";
+import Image from "next/image";
 import type { NewsSummary } from "@/data/news";
 import { withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
 
@@ -82,8 +83,8 @@ export function HomePageContent({ news, locale }: { news: NewsSummary[]; locale:
         <div className="news-grid" aria-label={t.home.latest}>
           {news.map((post) => (
             <article key={post.id} className="news-card">
-              <Link href={withLocale(post.href, locale)} className="news-card-link" aria-label={post.title}>
-                <div className="news-visual" style={{ backgroundImage: `url(${post.cover})` }} />
+              <Link href={withLocale(post.href, locale)} className="news-card-link" aria-label={post.title} prefetch={false}>
+                <div className="news-visual"><Image src={post.cover} alt="" fill sizes="(max-width: 768px) 100vw, 380px" loading="lazy" unoptimized /></div>
                 <h3>{post.title}</h3>
                 <time dateTime={post.date}>{post.date}</time>
               </Link>

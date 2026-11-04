@@ -3,6 +3,7 @@
 import { useRouteLocale } from "@/components/layout/locale-context";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { NewsSummary } from "@/data/news";
 import { getInitialLocale, withLocale, getLocaleMessages, type Locale } from "@/lib/i18n";
@@ -90,8 +91,8 @@ export function NewsList({ news }: { news: NewsSummary[] }) {
       <div className="news-list-grid">
         {paginatedNews.map((item) => (
           <article key={item.id} className="news-list-card">
-            <Link href={withLocale(item.href, locale)} className="news-list-link">
-              <div className="news-list-cover" style={{ backgroundImage: `url(${item.cover})` }} />
+            <Link href={withLocale(item.href, locale)} className="news-list-link" prefetch={false}>
+              <div className="news-list-cover"><Image src={item.cover} alt="" fill sizes="(max-width: 768px) 100vw, 560px" loading="lazy" unoptimized /></div>
               <div className="news-list-meta">
                 <span className="news-list-tag">{item.category}</span>
                 <h3>{item.title}</h3>

@@ -25,6 +25,17 @@ test("exported HTML has correct languages, canonical URLs and social metadata be
   }
 });
 
+test("news covers are native lazy images and article content is pre-rendered", async ({ request }) => {
+  for (const path of ["/en/", "/en/news/"]) {
+    const html = await (await request.get(path)).text();
+    expect(html).toMatch(/class="news-(?:visual|list-cover)"[^>]*><img[^>]*loading="lazy"/);
+  }
+  const html = await (await request.get("/zh-Hans/news/20251231-mcnews/")).text();
+  expect(html).toContain('class="news-detail-body"');
+  expect(html).toContain('class="news-detail-cover"');
+  expect(html).not.toContain('\\"body\\":');
+});
+
 test("sitemap URLs resolve, expose all languages and omit error routes", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(await robots.text()).toContain(`Sitemap: ${siteOrigin}/sitemap.xml`);

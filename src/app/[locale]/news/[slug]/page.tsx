@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getNewsBySlug, getNewsList } from "@/data/news";
 import { NewsDetailClient } from "@/components/news/news-detail-client";
 import { isLocale } from "@/lib/i18n";
+import { markdownToHtml } from "@/lib/markdown";
 import { descriptionFromMarkdown, pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
@@ -21,5 +22,5 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   if (!isLocale(locale)) notFound();
   const item = await getNewsBySlug(slug, locale);
   if (!item) notFound();
-  return <NewsDetailClient item={item} locale={locale} />;
+  return <NewsDetailClient item={item} locale={locale} html={markdownToHtml(item.body)} />;
 }
